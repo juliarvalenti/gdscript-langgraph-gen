@@ -37,3 +37,4 @@ output/
 credentials.json
 config.local.json
 runs/
+gdscript_generator.log

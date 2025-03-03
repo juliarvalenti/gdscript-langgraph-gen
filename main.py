@@ -47,7 +47,7 @@ def build_graph():
     instruction_node = InstructionNode("instruction")
     supervisor_node = SupervisorNode("supervisor", max_iterations=3)
     code_writer_node = CodeWriterNode("code_writer")
-    code_review_node = CodeReviewNode("code_review")
+    code_review_node = CodeReviewNode("code_review", max_iterations=1)  # Explicitly set to 1 revision
     file_processor_node = FileProcessorNode("file_processor")
     scene_setup_node = SceneSetupNode("scene_setup")
     final_report_node = FinalReportNode("final_report_node")
@@ -74,9 +74,10 @@ def build_graph():
     graph.add_conditional_edges(
         "code_review",
         # Function to route based on code review result
+        # Fixed to handle None values properly
         lambda state: "code_writer" if state.get("review_status", {}).get(
-            state.get("current_file", {}).get("filename", "")) == "needs_revision" 
-            else "file_processor"
+            state.get("current_file", {}).get("filename", "") if state.get("current_file") else ""
+        ) == "needs_revision" else "file_processor"
     )
     
     # File processor conditional edges
@@ -149,7 +150,6 @@ if __name__ == "__main__":
         logger.info("Running generation graph...")
         result = None
         last_state = initial_state
-        
         for step in graph.stream(initial_state, debug=True):
             # Get current node name
             current_node = list(step.keys())[0] if step and END not in step else "END"

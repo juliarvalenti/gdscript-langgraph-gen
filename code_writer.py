@@ -6,7 +6,7 @@ from claude_api import call_claude
 import re
 
 from state import GodotState
-from config import PROMPTS, GODOT_VERSION
+from config import PROMPTS, GODOT_VERSION, DESIGN_CONSTRAINTS
 
 logger = logging.getLogger(__name__)
 
@@ -83,7 +83,8 @@ class CodeWriterNode:
             filename=filename,
             purpose=purpose,
             details_section=details_section,
-            godot_version=GODOT_VERSION
+            godot_version=GODOT_VERSION, 
+            design_constraints="\n".join(DESIGN_CONSTRAINTS) if isinstance(DESIGN_CONSTRAINTS, list) else DESIGN_CONSTRAINTS
         )
     
     def _build_revision_prompt(self, instructions, filename, purpose, previous_code, feedback):

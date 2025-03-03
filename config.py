@@ -8,22 +8,55 @@ GODOT_VERSION = "Godot 4.x"
 
 # Claude API settings
 CLAUDE_MODEL = "claude-3-7-sonnet-20250219"
-CLAUDE_MAX_TOKENS = 6000
+CLAUDE_MAX_TOKENS = 8192
 
 CORE_GAME_DESCRIPTION = """
-Your game is a real-time strategy and automation hybrid that combines elements of Factorio-style factory building, Nexus Wars-style auto-battles, and RTS build-order strategy. Players start with a small build area and a limited amount of gold, which is gradually generated at their starting camp and must be collected manually by their avatar. Resources such as wood, stone, and gold spawn around the map, creating opportunities for economic expansion and strategic resource control.
+### **Competitive Automation RTS : Game Concept**
 
-Each player has access to a hotbar with unlocked buildings, allowing them to construct harvesters, crafting stations, automation tools, and combat units. Some buildings focus on resource generation, like the Lumber Mill and Quarry, while others specialize in crafting advanced materials, such as the Workshop, which combines wood into frames. Players must balance automation with efficiency, as gathering and production require optimization over time to ensure a steady supply chain.
+This is a **competitive, 2-dimensional, real-time strategy and automation hybrid**, blending **Factorio-style factory building, Nexus Wars-style auto-battles, and RTS build-order optimization**. Players face off on a **symmetrical battlefield**, managing their economy, automating production, and deploying units to overwhelm their opponent's base. The game focuses exclusively on **PvP, macro-focused gameplay**, with **no single-player or AI-controlled opponents** beyond unit behavior logic.
 
-Tech progression is handled through a Drafting Table, where players unlock Tier 2 and Tier 3 buildings that enable more powerful units and automation. Combat plays out through a spawn track system, where units like Catapults, Ballistas, and Battering Rams are constructed at specific buildings and automatically march toward the enemy base. Defenses, such as walls and fortifications, can be built at a higher cost to shield against incoming attacks.
+### **Core Gameplay Loop**
 
-Players cannot see their opponent's full build, but they can infer strategies based on incoming attacks, defenses, and scouting mechanics. The game encourages different playstyles, such as rushing aggressive units early, focusing on economy and expansion, or investing in late-game tech dominance. Since resources are finite, the game includes strategic decision-making around expansion and depletion, where controlling resource-rich areas can determine long-term success.
+1. **Resource Management** : Players gather **gold, wood, stone**, and other materials from **resource nodes** scattered around their starting area or randomly generated clusters.
+2. **Base Construction** : Buildings can **harvest resources, craft materials, automate production, and generate combat units**.
+3. **Tech Progression** : Through the **Drafting Table**, players unlock **advanced Tier 2 and Tier 3 buildings**, leading to stronger units and increased automation.
+4. **Combat & Strategy** : Units are automatically deployed along a **spawn track located at the top of the screen** and march toward the enemy base. Defenses such as **walls and fortifications** require careful planning to counter incoming waves.
+5. **Fog of War & Scouting** : Players cannot see the **opponent's full build**, relying on **attacks, defenses, and limited scouting mechanics** to infer strategies.
+6. **Victory Conditions** : The game ends when a **player's base HP reaches zero**, but **alternative win conditions** (such as forcing a resource depletion stalemate) introduce **long-term strategic depth**.
 
-Victory is achieved when an opponent's HP reaches zero, but the game also allows for tiebreaker mechanics where depleting all resources can force a stalemate. To ensure variety, the game could feature different faction playstyles (e.g., aggressive Goblins, economic Elves, or versatile Humans), inspired by StarCraft's asymmetric balance or Dominion's card pool drafting. A potential relic system incentivizes early exploration by offering bonuses like faster production, instant research, or enemy sabotage.
+### **Building System & Automation**
 
-The game's visual and sound design could take inspiration from Hero's Hour, Loop Hero, and The King is Watching, with an aesthetic that blends whimsical medieval automation with tactical warfare. Additionally, mechanics such as limited fog of war, randomized terrain, and asynchronous play could enhance replayability and strategic depth. To prevent cheesy rush tactics, a "build phase" grace period could delay early aggression, allowing players to develop a baseline economy before engaging in combat.
+Each player has a **hotbar of buildings**, including:
 
-At its core, this game offers a highly replayable, strategy-driven experience, rewarding efficiency, adaptation, and macro-level decision-making. Whether players prefer meticulous optimization of automated systems, rapid tactical aggression, or long-term economic scaling, they will need to constantly adapt their build order and strategy to counter their opponent's evolving tactics.
+- **Harvesters** (Lumber Mill, Quarry) : Collect raw resources.
+- **Crafting Stations** (Workshop, Sawmill) : Refine materials into higher-tier components.
+- **Automation Structures** (Conveyors, Depots) : Move resources without direct player interaction — otherwise units must be collected and moved by hand.
+- **Military Factories** (Atelier, Foundry) : Produce and deploy offensive units like **Catapults, Ballistas, and Battering Rams**.
+- **Defensive Structures** (Walls, Towers, Fortifications) : Shield the base at a higher cost to encourage aggressive play.
+
+As the user triggers upgrades via the Drafting Table, they can unlock more buildings and build higher tech units.
+
+Players must balance **automation efficiency vs. adaptability**, optimizing **resource flow** while remaining **reactive to enemy strategies**.
+
+### **Strategic Depth & Playstyles**
+
+The game supports **multiple strategic approaches**, rewarding adaptability:
+
+- **Rush Aggression** : Deploy early units to overwhelm an opponent before defenses are established.
+- **Tech Boom** : Focus on **researching advanced units** and production efficiency, sacrificing early aggression.
+- **Economy Play** : Expand aggressively to **secure long-term resource control**, outpacing the opponent's economy.
+- **Depletion Play** : Exploit **finite resources** to force the game into a **stalemate or war of attrition**.
+- **Building Optimization -** Like Factorio, a key part of our game loop is the optimization of your local area.  Good play should see your base operating like a well oiled machine, whereas bad play should perform worse.
+
+### **Advanced Mechanics & Meta Considerations**
+
+- **Faction Diversity** : Players can choose from different factions (e.g., **Goblins favor aggression, Elves prioritize economy, Humans adapt easily**), similar to **StarCraft's asymmetric balance**.
+- **Relics & Map Control** : Exploration is rewarded with **powerful relics**, granting **temporary buffs, passive bonuses, or strategic one-time effects**.
+- **Fog of War & Intel Gathering** : Players can **scout** the opponent's unit compositions but **not exact build orders**, requiring strategic inference.
+
+### **Final Vision**
+
+This game offers a **high-skill, automation-driven strategy experience**, rewarding **efficiency, adaptation, and long-term planning**. Whether players favor **meticulous optimization, aggressive rush tactics, or economic dominance**, success will come from **balancing automation, adaptation, and strategic foresight** in a competitive, **PvP-focused** battlefield.
 """
 
 # Folder structure for generated code
@@ -51,11 +84,18 @@ PROJECT_STRUCTURE = [
 
 # Design constraints for game development
 DESIGN_CONSTRAINTS = [
-    "Use placeholder art (colored shapes/boxes) for rapid prototyping",
-    "Focus on core gameplay mechanics over visuals",
+    "Leverage Resource objects for reusable data (e.g., unit stats, building costs) instead of hardcoding values in scripts.",
+    "Use Object Pooling for frequently instantiated objects like units or projectiles to avoid expensive runtime allocations.",
     "Implement a complete gameplay loop with win/lose conditions",
-    "Use signals for communication between nodes",
-    "Implement proper resource management systems"
+    "Prefer Godot’s built-in signals over manually polling data.",
+    "Game logic should reside in a GameManager singleton.", 
+    "Units should be self-contained, with AI and state-handling within their script", 
+    "Use inheritance and composition appropriately.", 
+    "Use static typing for clarity: e.g., `var health: int = 100`",
+    "Comment and document code with clear docstrings: e.g., `# Move the unit to the target position`",
+    "Use Autoload (Singletons) only for global state management", 
+    "Avoid singletons for things that should be scene-specific (e.g., units)", 
+    "Use State Machines for unit AI (e.g., IDLE → ATTACKING → RETREATING)"
 ]
 
 # Key mechanics for Factorio-Nexus Wars hybrid
@@ -83,12 +123,24 @@ CODE_VALIDATION_RULES = {
 }
 
 # Basic Godot types that shouldn't be treated as dependencies
-BASIC_GODOT_TYPES = {
-    "Node", "Node2D", "Sprite2D", "Control", "Area2D", "Label", "Button", 
-    "StaticBody2D", "RigidBody2D", "CharacterBody2D", "Camera2D", "Timer",
-    "int", "float", "bool", "String", "Array", "Dictionary", "Vector2", "Vector3",
-    "Rect2", "Transform2D", "Color", "Object", "Resource"
-}
+BASIC_GODOT_TYPES = [
+    "Node", "Node2D", "Sprite2D", "Control", "Button", "Label", "LineEdit", 
+    "TextureButton", "CanvasLayer", "Camera2D", "Area2D", "CollisionShape2D",
+    "RigidBody2D", "StaticBody2D", "CharacterBody2D", "Timer", "AudioStreamPlayer",
+    "AnimationPlayer", "AnimatedSprite2D", "Tween", "Resource", "Reference", 
+    "String", "Array", "Dictionary", "Vector2", "Vector3", "Rect2", "Color",
+    "Transform2D", "Callable", "Signal", "PackedScene", "SceneTree", "Viewport",
+    "TextureRect", "Panel", "TileMap", "Navigation2D", "NavigationAgent2D", 
+    "ShaderMaterial", "Shader", "HTTPRequest", "TCP_Server", "WebSocketClient",
+    "OS", "DisplayServer", "Input", "Engine", "ProjectSettings", "ResourceLoader",
+    "File", "Directory", "Mutex", "Thread", "Semaphore", "VideoStream",
+    "VideoStreamPlayer", "PanelContainer", "HBoxContainer", "VBoxContainer",
+    "GridContainer", "MarginContainer", "BoxContainer", "HSeparator", 
+    "VSeparator", "ScrollContainer", "Tree", "ItemList", "Object", "RefCounted",
+    "RayCast2D", "Path2D", "PathFollow2D", "EditorPlugin", "EditorScript",
+    "MultiplayerAPI", "MultiplayerPeer", "NetworkedMultiplayerPeer", "Position2D",
+    # Add more types if needed
+]
 
 # Prompts for Claude
 PROMPTS = {
@@ -110,6 +162,7 @@ Follow these coding guidelines:
 - Use "_" prefix for private functions
 - Include class_name if appropriate
 - Handle potential errors gracefully
+{design_constraints}
 
 Please provide ONLY the GDScript code with no additional explanation. The code should be valid GDScript that can be used directly in Godot 4.
 """,
@@ -141,15 +194,15 @@ Here's the source code that referenced them:
 ```
 
 For each missing dependency, define:
-{
+{{
   "filename": "[ClassName].gd",
   "purpose": "Brief description of purpose",
   "extends": "Most appropriate Godot class",
-  "details": {
+  "details": {{
     "responsibilities": ["main responsibility"],
     "dependencies": []
-  }
-}
+  }}
+}}
 
 Return valid JSON array only, no explanations.
 """,
@@ -192,5 +245,28 @@ Format your response as a JSON array with objects having these fields:
 ]
 
 Provide only the JSON array, no explanations or markdown.
+""",
+
+    "code_review": """
+You are an expert GDScript code reviewer.
+
+Please evaluate this code and provide feedback if you find any issues that would prevent it from working properly.
+Focus on critical issues like:
+1. Syntax errors
+2. Missing 'extends' statements
+3. Incomplete implementations
+4. Type errors or missing type hints
+5. Placeholder text or TODOs left in the code
+
+If the code looks good, just reply with "The code looks good and should work correctly."
+Otherwise, provide specific feedback about what needs to be fixed.
+
+Review the following code for a file named '{filename}' 
+that serves the purpose: "{purpose}".
+
+Here is the code:
+```gdscript
+{code}
+```
 """
 }

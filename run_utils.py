@@ -3,7 +3,7 @@ import uuid
 import json
 import datetime
 import logging
-from typing import Dict, Any, Optional
+from typing import Dict, Any, Optional, List
 
 logger = logging.getLogger(__name__)
 
@@ -60,6 +60,74 @@ def prepare_state_for_serialization(state: Dict[str, Any]) -> Dict[str, Any]:
     
     return serializable
 
+def initialize_overview(run_folder: str) -> None:
+    """Initialize the overview.json file if it doesn't exist"""
+    overview_path = os.path.join(run_folder, "overview.json")
+    if not os.path.exists(overview_path):
+        with open(overview_path, "w", encoding="utf-8") as f:
+            json.dump([], f, indent=2, ensure_ascii=False)
+        logger.debug(f"Initialized overview.json in {run_folder}")
+
+def append_to_overview(run_folder: str, node_name: str, inputs: Any, outputs: Any) -> None:
+    """Append a new step entry to the overview.json file"""
+    try:
+        overview_path = os.path.join(run_folder, "overview.json")
+        
+        # Initialize if not exists
+        if not os.path.exists(overview_path):
+            initialize_overview(run_folder)
+        
+        # Read current overview
+        with open(overview_path, "r", encoding="utf-8") as f:
+            overview_data = json.load(f)
+        
+        # Create a simplified entry
+        timestamp = datetime.datetime.now().isoformat()
+        entry = {
+            "step": len(overview_data) + 1,
+            "timestamp": timestamp,
+            "node": node_name,
+            "input_summary": summarize_data(inputs),
+            "output_summary": summarize_data(outputs)
+        }
+        
+        # Append the new entry
+        overview_data.append(entry)
+        
+        # Write back to file
+        with open(overview_path, "w", encoding="utf-8") as f:
+            json.dump(overview_data, f, indent=2, ensure_ascii=False)
+            
+        logger.debug(f"Updated overview.json with step {entry['step']}")
+    except Exception as e:
+        logger.error(f"Failed to update overview.json: {str(e)}")
+
+def summarize_data(data: Any) -> Any:
+    """Create a simplified summary of complex data structures"""
+    if isinstance(data, dict):
+        summary = {}
+        for key, value in data.items():
+            # Skip special keys
+            if key.startswith("_"):
+                continue
+                
+            # Summarize based on type
+            if isinstance(value, dict):
+                summary[key] = f"<dict with {len(value)} items>"
+            elif isinstance(value, (list, tuple)):
+                summary[key] = f"<{type(value).__name__} with {len(value)} items>"
+            elif isinstance(value, str) and len(value) > 100:
+                summary[key] = f"{value[:97]}..."
+            else:
+                summary[key] = value
+        return summary
+    elif isinstance(data, (list, tuple)):
+        if len(data) > 5:
+            return f"<{type(data).__name__} with {len(data)} items>"
+        return data
+    else:
+        return data
+
 def save_node_io(run_folder: str, node_name: str, inputs: Any, outputs: Any) -> None:
     """Save the inputs and outputs of a node execution"""
     try:
@@ -75,6 +143,9 @@ def save_node_io(run_folder: str, node_name: str, inputs: Any, outputs: Any) -> 
         # Save outputs
         with open(os.path.join(node_dir, f"{timestamp}_output.json"), "w", encoding="utf-8") as f:
             json.dump(prepare_state_for_serialization(outputs), f, indent=2, ensure_ascii=False)
+        
+        # Update the overview.json file with this step
+        append_to_overview(run_folder, node_name, inputs, outputs)
             
         logger.debug(f"Saved I/O for node {node_name}")
     except Exception as e:
