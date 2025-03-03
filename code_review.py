@@ -33,6 +33,14 @@ class CodeReviewNode:
 
         code_text = current_file.get("code", "")
         filename = current_file.get("filename", "")
+        
+        # Safeguard against missing filenames
+        if not filename:
+            logger.error("Missing filename in CodeReviewNode, skipping review")
+            return Command(goto="file_processor", update={
+                "current_file": {"status": "skipped"}
+            })
+        
         purpose = current_file.get("purpose", "")
         iteration = current_file.get("iteration", 1)
         

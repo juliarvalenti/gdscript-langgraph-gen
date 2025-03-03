@@ -5,6 +5,7 @@ import logging
 from typing import Dict, Any, Optional
 from time import sleep
 import re
+from langchain_anthropic import ChatAnthropic
 
 from config import CLAUDE_MODEL, CLAUDE_MAX_TOKENS
 
@@ -16,9 +17,8 @@ load_dotenv()
 
 # Try to import Anthropic's library if available
 try:
-    import anthropic
     ANTHROPIC_API_KEY = os.environ.get("ANTHROPIC_API_KEY")
-    client = anthropic.Anthropic(api_key=ANTHROPIC_API_KEY) if ANTHROPIC_API_KEY else None
+    client = ChatAnthropic(api_key=ANTHROPIC_API_KEY, model=CLAUDE_MODEL, max_tokens=CLAUDE_MAX_TOKENS) 
 except ImportError:
     logger.warning("Anthropic library not found. Using mock responses.")
     client = None
@@ -42,15 +42,8 @@ def call_claude(prompt: str, model: str = CLAUDE_MODEL, max_tokens: int = CLAUDE
         return _generate_mock_response(prompt)
     
     try:
-        message = client.messages.create(
-            model=model,
-            max_tokens=max_tokens,
-            messages=[
-                {"role": "user", "content": prompt}
-            ]
-        )
-        response = message.content[0].text
-        logger.info(f"Received response from Claude ({len(response)} chars)")
+        message = client.invoke(prompt)
+        response = message.content
         return response
     except Exception as e:
         logger.error(f"Error calling Claude API: {e}")
@@ -102,3 +95,8 @@ func set_active(value: bool) -> void:
 # NOTE: This is a mock implementation - please implement real functionality
 """
     return mock_script
+
+if __name__ == "__main__":
+		prompt = "Print a function that takes a string and returns it in uppercase."
+		response = call_claude(prompt)
+		print(response)

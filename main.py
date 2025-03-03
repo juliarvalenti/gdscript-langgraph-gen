@@ -150,7 +150,7 @@ if __name__ == "__main__":
         logger.info("Running generation graph...")
         result = None
         last_state = initial_state
-        for step in graph.stream(initial_state, debug=True):
+        for step in graph.stream(initial_state, { "recursion_limit": 500 }):
             # Get current node name
             current_node = list(step.keys())[0] if step and END not in step else "END"
             logger.info(f"Executing node: {current_node}")

@@ -43,22 +43,51 @@ class SupervisorNode:
             logger.info(f"Code generation complete with {len(state['generated_code'])} files")
             return Command(goto="scene_setup")
         
-        # First file to process
+        # First file to process - ensure we have valid files with filenames
         if files_to_generate:
-            first_file = files_to_generate[0]
-            logger.info(f"Starting code generation with file: {first_file['filename']}")
+            validated_files = []
+            for file_def in files_to_generate:
+                if not file_def.get("filename"):
+                    logger.error(f"Skipping file with missing filename: {file_def}")
+                    continue
+                if file_def.get("filename") == "Unnamed.gd":
+                    logger.error(f"Skipping unnamed file in initial plan: {file_def}")
+                    continue
+                validated_files.append(file_def)
+                
+            if len(validated_files) < len(files_to_generate):
+                logger.warning(f"Filtered out {len(files_to_generate) - len(validated_files)} invalid files from initial plan")
+                
+            files_to_generate = validated_files
             
-            # Set current file and file list for the code writer node
-            return Command(
-                update={
-                    "current_file": first_file,
-                    "pending_files": files_to_generate[1:],
-                    "generated_code": {},
-                    "review_status": {},
-                    "detailed_reviews": {}
-                },
-                goto="code_writer"
-            )
+            if files_to_generate:
+                first_file = files_to_generate[0]
+                logger.info(f"Starting code generation with file: {first_file['filename']}")
+                
+                # Set current file and file list for the code writer node
+                return Command(
+                    update={
+                        "current_file": first_file,
+                        "pending_files": files_to_generate[1:],
+                        "generated_code": {},
+                        "review_status": {},
+                        "detailed_reviews": {},
+                        "processed_files": []
+                    },
+                    goto="code_writer"
+                )
+            else:
+                logger.warning("No valid files to generate after filtering!")
+                # No valid files to generate
+                return Command(
+                    update={
+                        "generated_code": {},
+                        "review_status": {},
+                        "detailed_reviews": {},
+                        "processed_files": []
+                    },
+                    goto="scene_setup"
+                )
         else:
             # No files to generate
             logger.warning("No files to generate!")
@@ -66,7 +95,8 @@ class SupervisorNode:
                 update={
                     "generated_code": {},
                     "review_status": {},
-                    "detailed_reviews": {}
+                    "detailed_reviews": {},
+                    "processed_files": []
                 },
                 goto="scene_setup"
             )
@@ -101,10 +131,37 @@ class SupervisorNode:
 
       try:
           planned_files = json.loads(json_text)
+          
+          # Validate the planned files to ensure they have filenames
+          valid_files = []
+          for file in planned_files:
+              if not isinstance(file, dict):
+                  logger.error(f"Skipping non-dict file entry: {file}")
+                  continue
+                  
+              if not file.get("filename"):
+                  logger.error(f"File is missing filename: {file}")
+                  continue
+                  
+              if file.get("filename") == "Unnamed.gd":
+                  logger.error(f"Found unnamed file in plan: {file}")
+                  continue
+                  
+              valid_files.append(file)
+          
+          if len(valid_files) < len(planned_files):
+              logger.warning(f"Filtered out {len(planned_files) - len(valid_files)} invalid files from plan")
+          
+          # Limit the number of initial files to prevent explosion
+          MAX_INITIAL_FILES = 25
+          if len(valid_files) > MAX_INITIAL_FILES:
+              logger.warning(f"Too many initial files ({len(valid_files)}), limiting to {MAX_INITIAL_FILES}")
+              valid_files = valid_files[:MAX_INITIAL_FILES]
+          
+          logger.info(f"Successfully planned {len(valid_files)} files with Claude")
+          return valid_files
+          
       except json.JSONDecodeError as e:
           logger.error(f"JSON decoding error: {e}")
           raise
-
-      logger.info(f"Successfully planned {len(planned_files)} files with Claude")
-      return planned_files
 

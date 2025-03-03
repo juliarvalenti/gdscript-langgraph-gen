@@ -17,7 +17,7 @@ class CodeWriterNode:
     def __init__(self, name: str):
         self.name = name
         logger.info(f"CodeWriterNode initialized: {name}")
-        
+	
     def __call__(self, state: GodotState):
         """Make node callable for LangGraph"""
         return self.invoke(state)
@@ -28,9 +28,25 @@ class CodeWriterNode:
         
         if not current_file:
             logger.error("No current file to process in CodeWriterNode")
-            return Command(goto="code_review", update={})
+            return Command(goto="code_review", update={
+                "current_file": {"status": "skipped"}
+            })
         
-        filename = current_file.get("filename", "Unnamed.gd")
+        filename = current_file.get("filename", "")
+        
+        # Safeguard against missing or unnamed filenames
+        if not filename:
+            logger.error("Missing filename in CodeWriterNode")
+            return Command(goto="code_review", update={
+                "current_file": {"status": "skipped"}
+            })
+            
+        if filename == "Unnamed.gd":
+            logger.error("Found unnamed file in CodeWriterNode")
+            return Command(goto="code_review", update={
+                "current_file": {"status": "skipped"}
+            })
+            
         purpose = current_file.get("purpose", "")
         iteration = current_file.get("iteration", 1)
         previous_code = current_file.get("previous_code", "")
