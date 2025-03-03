@@ -1,0 +1,39 @@
+# Godot-specific ignores
+.import/
+export.cfg
+export_presets.cfg
+.godot/
+*.translation
+.mono/
+data_*/
+
+# Python/LangGraph ignores
+__pycache__/
+*.py[cod]
+*$py.class
+.env
+.venv
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+.ipynb_checkpoints
+.pytest_cache/
+dist/
+build/
+*.egg-info/
+
+# IDE and editor files
+.vscode/
+.idea/
+*.swp
+*.swo
+.DS_Store
+
+# Project specific
+logs/
+output/
+credentials.json
+config.local.json
+runs/

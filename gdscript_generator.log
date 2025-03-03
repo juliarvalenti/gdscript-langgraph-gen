@@ -1,0 +1,1732 @@
+2025-03-02 19:53:53,590 - __main__ - INFO - Starting Godot prototype generation process
+2025-03-02 19:53:53,590 - __main__ - INFO - Building LangGraph for Godot prototype generation
+2025-03-02 19:53:53,590 - instruction - INFO - InstructionNode initialized: instruction
+2025-03-02 19:53:53,591 - supervisor - INFO - SupervisorNode initialized with max_iterations=3
+2025-03-02 19:53:53,591 - code_writer - INFO - CodeWriterNode initialized: code_writer
+2025-03-02 19:53:53,591 - code_review - INFO - CodeReviewNode initialized: code_review
+2025-03-02 19:53:53,592 - file_processor - INFO - FileProcessorNode initialized: file_processor
+2025-03-02 19:53:53,592 - scene_setup - INFO - SceneSetupNode initialized: scene_setup
+2025-03-02 19:57:23,080 - __main__ - INFO - Starting Godot prototype generation process
+2025-03-02 19:57:23,080 - __main__ - INFO - Building LangGraph for Godot prototype generation
+2025-03-02 19:57:23,080 - instruction - INFO - InstructionNode initialized: instruction
+2025-03-02 19:57:23,081 - supervisor - INFO - SupervisorNode initialized with max_iterations=3
+2025-03-02 19:57:23,081 - code_writer - INFO - CodeWriterNode initialized: code_writer
+2025-03-02 19:57:23,081 - code_review - INFO - CodeReviewNode initialized: code_review
+2025-03-02 19:57:23,081 - file_processor - INFO - FileProcessorNode initialized: file_processor
+2025-03-02 19:57:23,081 - scene_setup - INFO - SceneSetupNode initialized: scene_setup
+2025-03-02 20:01:41,026 - __main__ - INFO - Starting Godot prototype generation process
+2025-03-02 20:01:41,026 - __main__ - INFO - Building LangGraph for Godot prototype generation
+2025-03-02 20:01:41,027 - instruction - INFO - InstructionNode initialized: instruction
+2025-03-02 20:01:41,027 - supervisor - INFO - SupervisorNode initialized with max_iterations=3
+2025-03-02 20:01:41,027 - code_writer - INFO - CodeWriterNode initialized: code_writer
+2025-03-02 20:01:41,027 - code_review - INFO - CodeReviewNode initialized: code_review
+2025-03-02 20:01:41,027 - file_processor - INFO - FileProcessorNode initialized: file_processor
+2025-03-02 20:01:41,028 - scene_setup - INFO - SceneSetupNode initialized: scene_setup
+2025-03-02 20:04:11,700 - __main__ - INFO - Starting Godot prototype generation process
+2025-03-02 20:04:11,700 - __main__ - INFO - Building LangGraph for Godot prototype generation
+2025-03-02 20:04:11,701 - instruction - INFO - InstructionNode initialized: instruction
+2025-03-02 20:04:11,701 - supervisor - INFO - SupervisorNode initialized with max_iterations=3
+2025-03-02 20:04:11,701 - code_writer - INFO - CodeWriterNode initialized: code_writer
+2025-03-02 20:04:11,701 - code_review - INFO - CodeReviewNode initialized: code_review
+2025-03-02 20:04:11,702 - file_processor - INFO - FileProcessorNode initialized: file_processor
+2025-03-02 20:04:11,702 - scene_setup - INFO - SceneSetupNode initialized: scene_setup
+2025-03-02 20:04:11,704 - __main__ - INFO - Graph built successfully with all nodes and connections
+2025-03-02 20:12:21,266 - __main__ - INFO - Starting Godot prototype generation process
+2025-03-02 20:12:21,267 - __main__ - INFO - Building LangGraph for Godot prototype generation
+2025-03-02 20:12:21,268 - instruction - INFO - InstructionNode initialized: instruction
+2025-03-02 20:12:21,268 - supervisor - INFO - SupervisorNode initialized with max_iterations=3
+2025-03-02 20:12:21,269 - code_writer - INFO - CodeWriterNode initialized: code_writer
+2025-03-02 20:12:21,269 - code_review - INFO - CodeReviewNode initialized: code_review
+2025-03-02 20:12:21,270 - file_processor - INFO - FileProcessorNode initialized: file_processor
+2025-03-02 20:12:21,270 - scene_setup - INFO - SceneSetupNode initialized: scene_setup
+2025-03-02 20:12:21,275 - __main__ - INFO - Graph built successfully with all nodes and connections
+2025-03-02 20:12:21,277 - __main__ - INFO - Received game description: 
+Your game is a real-time strategy and automation ...
+2025-03-02 20:12:21,278 - __main__ - INFO - Running generation graph...
+2025-03-02 20:12:21,332 - instruction - INFO - Processed game premise: 
+Your game is a real-time strategy and automation ...
+2025-03-02 20:12:21,375 - __main__ - INFO - Executing node: instruction
+2025-03-02 20:12:21,375 - supervisor - INFO - Planning necessary files based on game premise: 
+Your game is a real-time strategy and automation ...
+2025-03-02 20:12:21,376 - supervisor - INFO - Creating dynamic file plan for game
+2025-03-02 20:12:21,376 - supervisor - INFO - 
+You are an expert Godot game developer creating a plan for a new game.
+
+Game concept: {game_premise}
+
+I need you to analyze this game concept and list all necessary GDScript files that should be created.
+For each file, provide:
+1. Filename (with .gd extension)
+2. Purpose of the file
+3. Key responsibilities or features
+4. Class that this script extends (Node, Node2D, Control, etc.)
+5. Whether it should be a singleton (autoload)
+6. Likely dependencies on other scripts
+
+Focus on creating a complete architecture that covers:
+- Core game systems (main scene, game state management)
+- Resource management
+- Units and factories
+- UI elements
+- Helper utilities
+
+Format your response as a JSON array with objects having these fields:
+[
+  {{
+    "filename": "example.gd", 
+    "purpose": "what this file does",
+    "extends": "Node2D",
+    "singleton": true/false,
+    "dependencies": ["other_file.gd"],
+    "details": {{
+      "responsibilities": ["feature1", "feature2"],
+      "key_methods": ["method1", "method2"]
+    }}
+  }}
+]
+
+Provide only the JSON array, no explanations or markdown.
+
+2025-03-02 20:12:21,380 - claude_api - INFO - Calling Claude API with prompt of length 4368
+2025-03-02 20:12:21,380 - claude_api - WARNING - No Anthropic client available. Using mock response.
+2025-03-02 20:12:21,381 - claude_api - WARNING - Using mock response - NO REAL CLAUDE API IS BEING CALLED
+2025-03-02 20:12:21,382 - supervisor - INFO - Raw Claude response:
+
+extends Node
+
+class_name Unknown
+
+# This is a mock script created when Claude API was unavailable
+# You should replace this with actual implementation
+
+var name: String = "Unknown"
+var active: bool = true
+
+func _ready() -> void:
+    print("Unknown initialized")
+    
+func get_name() -> String:
+    return name
+    
+func is_active() -> bool:
+    return active
+    
+func set_active(value: bool) -> void:
+    active = value
+    
+# NOTE: This is a mock implementation - please implement real functionality
+
+2025-03-02 20:12:21,384 - supervisor - ERROR - Failed to extract valid JSON from Claude's file planning response
+2025-03-02 20:13:56,768 - __main__ - INFO - Starting Godot prototype generation process
+2025-03-02 20:13:56,769 - __main__ - INFO - Building LangGraph for Godot prototype generation
+2025-03-02 20:13:56,769 - instruction - INFO - InstructionNode initialized: instruction
+2025-03-02 20:13:56,769 - supervisor - INFO - SupervisorNode initialized with max_iterations=3
+2025-03-02 20:13:56,770 - code_writer - INFO - CodeWriterNode initialized: code_writer
+2025-03-02 20:13:56,770 - code_review - INFO - CodeReviewNode initialized: code_review
+2025-03-02 20:13:56,770 - file_processor - INFO - FileProcessorNode initialized: file_processor
+2025-03-02 20:13:56,771 - scene_setup - INFO - SceneSetupNode initialized: scene_setup
+2025-03-02 20:13:56,774 - __main__ - INFO - Graph built successfully with all nodes and connections
+2025-03-02 20:13:56,777 - __main__ - INFO - Received game description: 
+Your game is a real-time strategy and automation ...
+2025-03-02 20:13:56,778 - __main__ - INFO - Running generation graph...
+2025-03-02 20:13:56,831 - instruction - INFO - Processed game premise: 
+Your game is a real-time strategy and automation ...
+2025-03-02 20:13:56,875 - __main__ - INFO - Executing node: instruction
+2025-03-02 20:13:56,876 - supervisor - INFO - Planning necessary files based on game premise: 
+Your game is a real-time strategy and automation ...
+2025-03-02 20:13:56,876 - supervisor - INFO - Creating dynamic file plan for game
+2025-03-02 20:13:56,877 - supervisor - INFO - 
+You are an expert Godot game developer creating a plan for a new game.
+
+Game concept: {game_premise}
+
+I need you to analyze this game concept and list all necessary GDScript files that should be created.
+For each file, provide:
+1. Filename (with .gd extension)
+2. Purpose of the file
+3. Key responsibilities or features
+4. Class that this script extends (Node, Node2D, Control, etc.)
+5. Whether it should be a singleton (autoload)
+6. Likely dependencies on other scripts
+
+Focus on creating a complete architecture that covers:
+- Core game systems (main scene, game state management)
+- Resource management
+- Units and factories
+- UI elements
+- Helper utilities
+
+Format your response as a JSON array with objects having these fields:
+[
+  {{
+    "filename": "example.gd", 
+    "purpose": "what this file does",
+    "extends": "Node2D",
+    "singleton": true/false,
+    "dependencies": ["other_file.gd"],
+    "details": {{
+      "responsibilities": ["feature1", "feature2"],
+      "key_methods": ["method1", "method2"]
+    }}
+  }}
+]
+
+Provide only the JSON array, no explanations or markdown.
+
+2025-03-02 20:13:56,882 - claude_api - INFO - Calling Claude API with prompt of length 4368
+2025-03-02 20:14:51,464 - httpx - INFO - HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2025-03-02 20:14:51,481 - claude_api - INFO - Received response from Claude (14661 chars)
+2025-03-02 20:14:51,482 - supervisor - INFO - Raw Claude response:
+[
+  {
+    "filename": "game_manager.gd",
+    "purpose": "Central game control system",
+    "extends": "Node",
+    "singleton": true,
+    "dependencies": ["resource_manager.gd", "player_manager.gd", "map_generator.gd", "tech_manager.gd"],
+    "details": {
+      "responsibilities": ["Game state management", "Match progression", "Victory conditions", "Turn/phase management", "Timer management"],
+      "key_methods": ["start_game", "end_game", "check_victory_conditions", "start_build_phase", "start_combat_phase"]
+    }
+  },
+  {
+    "filename": "player_manager.gd",
+    "purpose": "Manages player data and state",
+    "extends": "Node",
+    "singleton": true,
+    "dependencies": ["player.gd", "resource_manager.gd"],
+    "details": {
+      "responsibilities": ["Player initialization", "Player turn management", "Players list management", "Current player tracking"],
+      "key_methods": ["init_players", "get_current_player", "switch_player", "update_player_stats"]
+    }
+  },
+  {
+    "filename": "player.gd",
+    "purpose": "Player entity with properties and methods",
+    "extends": "Node",
+    "singleton": false,
+    "dependencies": ["avatar.gd", "building_manager.gd"],
+    "details": {
+      "responsibilities": ["Player resources", "Buildings owned", "Technology level", "Base health tracking"],
+      "key_methods": ["collect_resource", "damage_base", "add_building", "unlock_tech"]
+    }
+  },
+  {
+    "filename": "avatar.gd",
+    "purpose": "Player-controlled character for manual resource collection",
+    "extends": "CharacterBody2D",
+    "singleton": false,
+    "dependencies": ["player.gd", "resource_manager.gd"],
+    "details": {
+      "responsibilities": ["Character movement", "Resource collection", "Interaction with environment"],
+      "key_methods": ["move", "collect_resource", "interact"]
+    }
+  },
+  {
+    "filename": "resource_manager.gd",
+    "purpose": "Manages all resources in the game",
+    "extends": "Node",
+    "singleton": true,
+    "dependencies": ["resource.gd", "map_generator.gd"],
+    "details": {
+      "responsibilities": ["Resource spawning", "Resource tracking", "Resource depletion", "Resource allocation"],
+      "key_methods": ["spawn_resources", "deplete_resource", "get_resource_at_position", "allocate_resource"]
+    }
+  },
+  {
+    "filename": "resource.gd",
+    "purpose": "Resource entity with properties",
+    "extends": "Node2D",
+    "singleton": false,
+    "dependencies": [],
+    "details": {
+      "responsibilities": ["Resource type", "Resource amount", "Visual representation"],
+      "key_methods": ["harvest", "get_amount", "deplete"]
+    }
+  },
+  {
+    "filename": "building_manager.gd",
+    "purpose": "Manages all buildings in the game",
+    "extends": "Node",
+    "singleton": true,
+    "dependencies": ["building.gd", "tech_manager.gd"],
+    "details": {
+      "responsibilities": ["Building placement", "Building construction", "Building type registry", "Building validation"],
+      "key_methods": ["place_building", "remove_building", "get_building_cost", "validate_placement"]
+    }
+  },
+  {
+    "filename": "building.gd",
+    "purpose": "Base building class",
+    "extends": "Node2D",
+    "singleton": false,
+    "dependencies": ["resource_manager.gd"],
+    "details": {
+      "responsibilities": ["Building properties", "Building state", "Building construction"],
+      "key_methods": ["construct", "upgrade", "destroy", "get_production_rate"]
+    }
+  },
+  {
+    "filename": "harvester_building.gd",
+    "purpose": "Resource harvesting buildings (Lumber Mill, Quarry, etc.)",
+    "extends": "building.gd",
+    "singleton": false,
+    "dependencies": ["resource_manager.gd", "automation_manager.gd"],
+    "details": {
+      "responsibilities": ["Resource harvesting", "Automatic resource collection", "Resource storage"],
+      "key_methods": ["harvest_resource", "store_resource", "get_resource_type", "get_efficiency"]
+    }
+  },
+  {
+    "filename": "crafting_building.gd",
+    "purpose": "Resources crafting and transformation buildings",
+    "extends": "building.gd",
+    "singleton": false,
+    "dependencies": ["resource_manager.gd", "automation_manager.gd"],
+    "details": {
+      "responsibilities": ["Resource crafting", "Recipe management", "Production queues"],
+      "key_methods": ["craft_item", "add_to_queue", "get_crafting_progress", "complete_crafting"]
+    }
+  },
+  {
+    "filename": "military_building.gd",
+    "purpose": "Buildings that produce military units",
+    "extends": "building.gd",
+    "singleton": false,
+    "dependencies": ["unit_manager.gd", "resource_manager.gd"],
+    "details": {
+      "responsibilities": ["Unit production", "Unit spawning", "Rally point setting"],
+      "key_methods": ["produce_unit", "set_rally_point", "get_production_queue", "complete_unit"]
+    }
+  },
+  {
+    "filename": "defense_building.gd",
+    "purpose": "Defensive structures",
+    "extends": "building.gd",
+    "singleton": false,
+    "dependencies": ["combat_manager.gd"],
+    "details": {
+      "responsibilities": ["Defensive properties", "Health/durability", "Defensive bonus"],
+      "key_methods": ["take_damage", "repair", "get_defense_bonus"]
+    }
+  },
+  {
+    "filename": "tech_building.gd",
+    "purpose": "Buildings for tech advancement (Drafting Table)",
+    "extends": "building.gd",
+    "singleton": false,
+    "dependencies": ["tech_manager.gd"],
+    "details": {
+      "responsibilities": ["Tech research", "Tech tree management", "Unlock new buildings"],
+      "key_methods": ["research_tech", "get_available_tech", "unlock_building"]
+    }
+  },
+  {
+    "filename": "unit_manager.gd",
+    "purpose": "Manages all units in the game",
+    "extends": "Node",
+    "singleton": true,
+    "dependencies": ["unit.gd", "combat_manager.gd", "pathfinding.gd"],
+    "details": {
+      "responsibilities": ["Unit spawning", "Unit movement", "Unit tracking", "Unit targeting"],
+      "key_methods": ["spawn_unit", "move_unit", "target_enemy", "destroy_unit"]
+    }
+  },
+  {
+    "filename": "unit.gd",
+    "purpose": "Base unit class",
+    "extends": "CharacterBody2D",
+    "singleton": false,
+    "dependencies": ["combat_manager.gd", "pathfinding.gd"],
+    "details": {
+      "responsibilities": ["Unit properties", "Movement", "Combat stats"],
+      "key_methods": ["move", "attack", "take_damage", "die"]
+    }
+  },
+  {
+    "filename": "combat_manager.gd",
+    "purpose": "Manages combat interactions",
+    "extends": "Node",
+    "singleton": true,
+    "dependencies": ["unit.gd", "defense_building.gd"],
+    "details": {
+      "responsibilities": ["Combat calculations", "Damage resolution", "Attack validation", "Combat events"],
+      "key_methods": ["process_attack", "calculate_damage", "check_range", "resolve_combat"]
+    }
+  },
+  {
+    "filename": "tech_manager.gd",
+    "purpose": "Manages technology progression",
+    "extends": "Node",
+    "singleton": true,
+    "dependencies": ["building_manager.gd", "unit_manager.gd"],
+    "details": {
+      "responsibilities": ["Tech tree", "Research progress", "Tech unlocks", "Tech requirements"],
+      "key_methods": ["unlock_tech", "get_available_tech", "check_requirements", "get_tech_cost"]
+    }
+  },
+  {
+    "filename": "automation_manager.gd",
+    "purpose": "Manages automated processes",
+    "extends": "Node",
+    "singleton": true,
+    "dependencies": ["harvester_building.gd", "crafting_building.gd", "resource_manager.gd"],
+    "details": {
+      "responsibilities": ["Production processes", "Resource flows", "Automation logic", "Process optimization"],
+      "key_methods": ["process_automation", "connect_buildings", "optimize_flow", "handle_bottlenecks"]
+    }
+  },
+  {
+    "filename": "map_generator.gd",
+    "purpose": "Generates game map with resources and terrain",
+    "extends": "Node",
+    "singleton": true,
+    "dependencies": ["resource.gd", "terrain.gd"],
+    "details": {
+      "responsibilities": ["Map generation", "Resource placement", "Terrain generation", "Starting positions"],
+      "key_methods": ["generate_map", "place_resources", "create_terrain", "set_starting_positions"]
+    }
+  },
+  {
+    "filename": "terrain.gd",
+    "purpose": "Terrain tile management",
+    "extends": "TileMap",
+    "singleton": false,
+    "dependencies": [],
+    "details": {
+      "responsibilities": ["Terrain properties", "Pathfinding costs", "Visual representation"],
+      "key_methods": ["get_terrain_type", "get_movement_cost", "is_buildable"]
+    }
+  },
+  {
+    "filename": "pathfinding.gd",
+    "purpose": "Pathfinding system for units",
+    "extends": "Node",
+    "singleton": true,
+    "dependencies": ["terrain.gd"],
+    "details": {
+      "responsibilities": ["A* pathfinding", "Path optimization", "Movement costs", "Obstacle avoidance"],
+      "key_methods": ["find_path", "get_next_position", "calculate_path_cost", "update_navigation_grid"]
+    }
+  },
+  {
+    "filename": "relic_manager.gd",
+    "purpose": "Manages relics that provide bonuses",
+    "extends": "Node",
+    "singleton": true,
+    "dependencies": ["player.gd", "map_generator.gd"],
+    "details": {
+      "responsibilities": ["Relic spawning", "Relic effects", "Relic collection"],
+      "key_methods": ["spawn_relics", "apply_relic_effect", "collect_relic", "get_active_relics"]
+    }
+  },
+  {
+    "filename": "faction_manager.gd",
+    "purpose": "Manages different playable factions",
+    "extends": "Node",
+    "singleton": true,
+    "dependencies": ["player.gd", "tech_manager.gd", "unit_manager.gd"],
+    "details": {
+      "responsibilities": ["Faction properties", "Faction abilities", "Faction unique units/buildings"],
+      "key_methods": ["select_faction", "apply_faction_bonuses", "get_faction_buildings", "get_faction_units"]
+    }
+  },
+  {
+    "filename": "ui_manager.gd",
+    "purpose": "Manages user interface elements",
+    "extends": "Control",
+    "singleton": true,
+    "dependencies": ["hotbar_ui.gd", "resource_ui.gd", "building_ui.gd", "tech_ui.gd"],
+    "details": {
+      "responsibilities": ["UI initialization", "UI updates", "Input handling", "UI navigation"],
+      "key_methods": ["init_ui", "update_resources", "show_building_menu", "update_tech_tree"]
+    }
+  },
+  {
+    "filename": "hotbar_ui.gd",
+    "purpose": "Manages the player's hotbar for building selection",
+    "extends": "Control",
+    "singleton": false,
+    "dependencies": ["building_manager.gd", "tech_manager.gd"],
+    "details": {
+      "responsibilities": ["Building selection", "Hotbar slots", "Building availability"],
+      "key_methods": ["select_building", "update_hotbar", "add_building_to_hotbar", "check_availability"]
+    }
+  },
+  {
+    "filename": "resource_ui.gd",
+    "purpose": "Displays resource information",
+    "extends": "Control",
+    "singleton": false,
+    "dependencies": ["resource_manager.gd", "player.gd"],
+    "details": {
+      "responsibilities": ["Resource display", "Resource counts", "Production rates"],
+      "key_methods": ["update_resources", "show_resource_details", "display_production_rate"]
+    }
+  },
+  {
+    "filename": "building_ui.gd",
+    "purpose": "UI for building placement and management",
+    "extends": "Control",
+    "singleton": false,
+    "dependencies": ["building_manager.gd"],
+    "details": {
+      "responsibilities": ["Building placement UI", "Building information", "Construction progress"],
+      "key_methods": ["show_placement_grid", "display_building_info", "update_construction_progress"]
+    }
+  },
+  {
+    "filename": "tech_ui.gd",
+    "purpose": "UI for tech tree and research",
+    "extends": "Control",
+    "singleton": false,
+    "dependencies": ["tech_manager.gd"],
+    "details": {
+      "responsibilities": ["Tech tree display", "Research progress", "Tech requirements visualization"],
+      "key_methods": ["display_tech_tree", "update_research_progress", "show_tech_requirements"]
+    }
+  },
+  {
+    "filename": "minimap.gd",
+    "purpose": "Manages the minimap",
+    "extends": "Control",
+    "singleton": false,
+    "dependencies": ["map_generator.gd", "fog_of_war.gd"],
+    "details": {
+      "responsibilities": ["Minimap rendering", "Unit representation", "Resource locations", "View area"],
+      "key_methods": ["update_minimap", "draw_units", "mark_resources", "move_view_area"]
+    }
+  },
+  {
+    "filename": "fog_of_war.gd",
+    "purpose": "Manages visibility and fog of war",
+    "extends": "Node2D",
+    "singleton": true,
+    "dependencies": ["player.gd", "unit.gd", "building.gd"],
+    "details": {
+      "responsibilities": ["Visibility calculations", "Fog of war mask", "Vision updates", "Unit detection"],
+      "key_methods": ["update_fog", "reveal_area", "check_visibility", "detect_enemy_units"]
+    }
+  },
+  {
+    "filename": "game_scene.gd",
+    "purpose": "Main game scene controller",
+    "extends": "Node2D",
+    "singleton": false,
+    "dependencies": ["game_manager.gd", "map_generator.gd", "ui_manager.gd"],
+    "details": {
+      "responsibilities": ["Scene setup", "Input handling", "Camera management", "Game loop"],
+      "key_methods": ["_ready", "handle_input", "manage_camera", "update_game_state"]
+    }
+  },
+  {
+    "filename": "save_load_manager.gd",
+    "purpose": "Manages saving and loading games",
+    "extends": "Node",
+    "singleton": true,
+    "dependencies": ["game_manager.gd", "player_manager.gd", "resource_manager.gd"],
+    "details": {
+      "responsibilities": ["Game state serialization", "Save file management", "Loading saved games"],
+      "key_methods": ["save_game", "load_game", "create_save_data", "parse_save_data"]
+    }
+  },
+  {
+    "filename": "audio_manager.gd",
+    "purpose": "Manages game audio",
+    "extends": "Node",
+    "singleton": true,
+    "dependencies": [],
+    "details": {
+      "responsibilities": ["Sound effects", "Music playback", "Audio settings", "Spatial audio"],
+      "key_methods": ["play_sfx", "start_music", "set_volume", "stop_all_audio"]
+    }
+  },
+  {
+    "filename": "utils.gd",
+    "purpose": "Utility functions used across the game",
+    "extends": "Node",
+    "singleton": true,
+    "dependencies": [],
+    "details": {
+      "responsibilities": ["Math utilities", "Conversion helpers", "String formatting", "Random generation"],
+      "key_methods": ["distance_between", "grid_to_world", "world_to_grid", "random_in_range"]
+    }
+  },
+  {
+    "filename": "globals.gd",
+    "purpose": "Global constants and configurations",
+    "extends": "Node",
+    "singleton": true,
+    "dependencies": [],
+    "details": {
+      "responsibilities": ["Game constants", "Configuration values", "Default settings", "Enum definitions"],
+      "key_methods": ["get_building_data", "get_unit_data", "get_tech_costs", "get_resource_values"]
+    }
+  }
+]
+2025-03-02 20:14:51,544 - supervisor - INFO - Extracted JSON:
+[
+  {
+    "filename": "game_manager.gd",
+    "purpose": "Central game control system",
+    "extends": "Node",
+    "singleton": true,
+    "dependencies": ["resource_manager.gd", "player_manager.gd", "map_generator.gd", "tech_manager.gd"],
+    "details": {
+      "responsibilities": ["Game state management", "Match progression", "Victory conditions", "Turn/phase management", "Timer management"],
+      "key_methods": ["start_game", "end_game", "check_victory_conditions", "start_build_phase", "start_combat_phase"]
+    }
+  },
+  {
+    "filename": "player_manager.gd",
+    "purpose": "Manages player data and state",
+    "extends": "Node",
+    "singleton": true,
+    "dependencies": ["player.gd", "resource_manager.gd"],
+    "details": {
+      "responsibilities": ["Player initialization", "Player turn management", "Players list management", "Current player tracking"],
+      "key_methods": ["init_players", "get_current_player", "switch_player", "update_player_stats"]
+    }
+  },
+  {
+    "filename": "player.gd",
+    "purpose": "Player entity with properties and methods",
+    "extends": "Node",
+    "singleton": false,
+    "dependencies": ["avatar.gd", "building_manager.gd"],
+    "details": {
+      "responsibilities": ["Player resources", "Buildings owned", "Technology level", "Base health tracking"],
+      "key_methods": ["collect_resource", "damage_base", "add_building", "unlock_tech"]
+    }
+  },
+  {
+    "filename": "avatar.gd",
+    "purpose": "Player-controlled character for manual resource collection",
+    "extends": "CharacterBody2D",
+    "singleton": false,
+    "dependencies": ["player.gd", "resource_manager.gd"],
+    "details": {
+      "responsibilities": ["Character movement", "Resource collection", "Interaction with environment"],
+      "key_methods": ["move", "collect_resource", "interact"]
+    }
+  },
+  {
+    "filename": "resource_manager.gd",
+    "purpose": "Manages all resources in the game",
+    "extends": "Node",
+    "singleton": true,
+    "dependencies": ["resource.gd", "map_generator.gd"],
+    "details": {
+      "responsibilities": ["Resource spawning", "Resource tracking", "Resource depletion", "Resource allocation"],
+      "key_methods": ["spawn_resources", "deplete_resource", "get_resource_at_position", "allocate_resource"]
+    }
+  },
+  {
+    "filename": "resource.gd",
+    "purpose": "Resource entity with properties",
+    "extends": "Node2D",
+    "singleton": false,
+    "dependencies": [],
+    "details": {
+      "responsibilities": ["Resource type", "Resource amount", "Visual representation"],
+      "key_methods": ["harvest", "get_amount", "deplete"]
+    }
+  },
+  {
+    "filename": "building_manager.gd",
+    "purpose": "Manages all buildings in the game",
+    "extends": "Node",
+    "singleton": true,
+    "dependencies": ["building.gd", "tech_manager.gd"],
+    "details": {
+      "responsibilities": ["Building placement", "Building construction", "Building type registry", "Building validation"],
+      "key_methods": ["place_building", "remove_building", "get_building_cost", "validate_placement"]
+    }
+  },
+  {
+    "filename": "building.gd",
+    "purpose": "Base building class",
+    "extends": "Node2D",
+    "singleton": false,
+    "dependencies": ["resource_manager.gd"],
+    "details": {
+      "responsibilities": ["Building properties", "Building state", "Building construction"],
+      "key_methods": ["construct", "upgrade", "destroy", "get_production_rate"]
+    }
+  },
+  {
+    "filename": "harvester_building.gd",
+    "purpose": "Resource harvesting buildings (Lumber Mill, Quarry, etc.)",
+    "extends": "building.gd",
+    "singleton": false,
+    "dependencies": ["resource_manager.gd", "automation_manager.gd"],
+    "details": {
+      "responsibilities": ["Resource harvesting", "Automatic resource collection", "Resource storage"],
+      "key_methods": ["harvest_resource", "store_resource", "get_resource_type", "get_efficiency"]
+    }
+  },
+  {
+    "filename": "crafting_building.gd",
+    "purpose": "Resources crafting and transformation buildings",
+    "extends": "building.gd",
+    "singleton": false,
+    "dependencies": ["resource_manager.gd", "automation_manager.gd"],
+    "details": {
+      "responsibilities": ["Resource crafting", "Recipe management", "Production queues"],
+      "key_methods": ["craft_item", "add_to_queue", "get_crafting_progress", "complete_crafting"]
+    }
+  },
+  {
+    "filename": "military_building.gd",
+    "purpose": "Buildings that produce military units",
+    "extends": "building.gd",
+    "singleton": false,
+    "dependencies": ["unit_manager.gd", "resource_manager.gd"],
+    "details": {
+      "responsibilities": ["Unit production", "Unit spawning", "Rally point setting"],
+      "key_methods": ["produce_unit", "set_rally_point", "get_production_queue", "complete_unit"]
+    }
+  },
+  {
+    "filename": "defense_building.gd",
+    "purpose": "Defensive structures",
+    "extends": "building.gd",
+    "singleton": false,
+    "dependencies": ["combat_manager.gd"],
+    "details": {
+      "responsibilities": ["Defensive properties", "Health/durability", "Defensive bonus"],
+      "key_methods": ["take_damage", "repair", "get_defense_bonus"]
+    }
+  },
+  {
+    "filename": "tech_building.gd",
+    "purpose": "Buildings for tech advancement (Drafting Table)",
+    "extends": "building.gd",
+    "singleton": false,
+    "dependencies": ["tech_manager.gd"],
+    "details": {
+      "responsibilities": ["Tech research", "Tech tree management", "Unlock new buildings"],
+      "key_methods": ["research_tech", "get_available_tech", "unlock_building"]
+    }
+  },
+  {
+    "filename": "unit_manager.gd",
+    "purpose": "Manages all units in the game",
+    "extends": "Node",
+    "singleton": true,
+    "dependencies": ["unit.gd", "combat_manager.gd", "pathfinding.gd"],
+    "details": {
+      "responsibilities": ["Unit spawning", "Unit movement", "Unit tracking", "Unit targeting"],
+      "key_methods": ["spawn_unit", "move_unit", "target_enemy", "destroy_unit"]
+    }
+  },
+  {
+    "filename": "unit.gd",
+    "purpose": "Base unit class",
+    "extends": "CharacterBody2D",
+    "singleton": false,
+    "dependencies": ["combat_manager.gd", "pathfinding.gd"],
+    "details": {
+      "responsibilities": ["Unit properties", "Movement", "Combat stats"],
+      "key_methods": ["move", "attack", "take_damage", "die"]
+    }
+  },
+  {
+    "filename": "combat_manager.gd",
+    "purpose": "Manages combat interactions",
+    "extends": "Node",
+    "singleton": true,
+    "dependencies": ["unit.gd", "defense_building.gd"],
+    "details": {
+      "responsibilities": ["Combat calculations", "Damage resolution", "Attack validation", "Combat events"],
+      "key_methods": ["process_attack", "calculate_damage", "check_range", "resolve_combat"]
+    }
+  },
+  {
+    "filename": "tech_manager.gd",
+    "purpose": "Manages technology progression",
+    "extends": "Node",
+    "singleton": true,
+    "dependencies": ["building_manager.gd", "unit_manager.gd"],
+    "details": {
+      "responsibilities": ["Tech tree", "Research progress", "Tech unlocks", "Tech requirements"],
+      "key_methods": ["unlock_tech", "get_available_tech", "check_requirements", "get_tech_cost"]
+    }
+  },
+  {
+    "filename": "automation_manager.gd",
+    "purpose": "Manages automated processes",
+    "extends": "Node",
+    "singleton": true,
+    "dependencies": ["harvester_building.gd", "crafting_building.gd", "resource_manager.gd"],
+    "details": {
+      "responsibilities": ["Production processes", "Resource flows", "Automation logic", "Process optimization"],
+      "key_methods": ["process_automation", "connect_buildings", "optimize_flow", "handle_bottlenecks"]
+    }
+  },
+  {
+    "filename": "map_generator.gd",
+    "purpose": "Generates game map with resources and terrain",
+    "extends": "Node",
+    "singleton": true,
+    "dependencies": ["resource.gd", "terrain.gd"],
+    "details": {
+      "responsibilities": ["Map generation", "Resource placement", "Terrain generation", "Starting positions"],
+      "key_methods": ["generate_map", "place_resources", "create_terrain", "set_starting_positions"]
+    }
+  },
+  {
+    "filename": "terrain.gd",
+    "purpose": "Terrain tile management",
+    "extends": "TileMap",
+    "singleton": false,
+    "dependencies": [],
+    "details": {
+      "responsibilities": ["Terrain properties", "Pathfinding costs", "Visual representation"],
+      "key_methods": ["get_terrain_type", "get_movement_cost", "is_buildable"]
+    }
+  },
+  {
+    "filename": "pathfinding.gd",
+    "purpose": "Pathfinding system for units",
+    "extends": "Node",
+    "singleton": true,
+    "dependencies": ["terrain.gd"],
+    "details": {
+      "responsibilities": ["A* pathfinding", "Path optimization", "Movement costs", "Obstacle avoidance"],
+      "key_methods": ["find_path", "get_next_position", "calculate_path_cost", "update_navigation_grid"]
+    }
+  },
+  {
+    "filename": "relic_manager.gd",
+    "purpose": "Manages relics that provide bonuses",
+    "extends": "Node",
+    "singleton": true,
+    "dependencies": ["player.gd", "map_generator.gd"],
+    "details": {
+      "responsibilities": ["Relic spawning", "Relic effects", "Relic collection"],
+      "key_methods": ["spawn_relics", "apply_relic_effect", "collect_relic", "get_active_relics"]
+    }
+  },
+  {
+    "filename": "faction_manager.gd",
+    "purpose": "Manages different playable factions",
+    "extends": "Node",
+    "singleton": true,
+    "dependencies": ["player.gd", "tech_manager.gd", "unit_manager.gd"],
+    "details": {
+      "responsibilities": ["Faction properties", "Faction abilities", "Faction unique units/buildings"],
+      "key_methods": ["select_faction", "apply_faction_bonuses", "get_faction_buildings", "get_faction_units"]
+    }
+  },
+  {
+    "filename": "ui_manager.gd",
+    "purpose": "Manages user interface elements",
+    "extends": "Control",
+    "singleton": true,
+    "dependencies": ["hotbar_ui.gd", "resource_ui.gd", "building_ui.gd", "tech_ui.gd"],
+    "details": {
+      "responsibilities": ["UI initialization", "UI updates", "Input handling", "UI navigation"],
+      "key_methods": ["init_ui", "update_resources", "show_building_menu", "update_tech_tree"]
+    }
+  },
+  {
+    "filename": "hotbar_ui.gd",
+    "purpose": "Manages the player's hotbar for building selection",
+    "extends": "Control",
+    "singleton": false,
+    "dependencies": ["building_manager.gd", "tech_manager.gd"],
+    "details": {
+      "responsibilities": ["Building selection", "Hotbar slots", "Building availability"],
+      "key_methods": ["select_building", "update_hotbar", "add_building_to_hotbar", "check_availability"]
+    }
+  },
+  {
+    "filename": "resource_ui.gd",
+    "purpose": "Displays resource information",
+    "extends": "Control",
+    "singleton": false,
+    "dependencies": ["resource_manager.gd", "player.gd"],
+    "details": {
+      "responsibilities": ["Resource display", "Resource counts", "Production rates"],
+      "key_methods": ["update_resources", "show_resource_details", "display_production_rate"]
+    }
+  },
+  {
+    "filename": "building_ui.gd",
+    "purpose": "UI for building placement and management",
+    "extends": "Control",
+    "singleton": false,
+    "dependencies": ["building_manager.gd"],
+    "details": {
+      "responsibilities": ["Building placement UI", "Building information", "Construction progress"],
+      "key_methods": ["show_placement_grid", "display_building_info", "update_construction_progress"]
+    }
+  },
+  {
+    "filename": "tech_ui.gd",
+    "purpose": "UI for tech tree and research",
+    "extends": "Control",
+    "singleton": false,
+    "dependencies": ["tech_manager.gd"],
+    "details": {
+      "responsibilities": ["Tech tree display", "Research progress", "Tech requirements visualization"],
+      "key_methods": ["display_tech_tree", "update_research_progress", "show_tech_requirements"]
+    }
+  },
+  {
+    "filename": "minimap.gd",
+    "purpose": "Manages the minimap",
+    "extends": "Control",
+    "singleton": false,
+    "dependencies": ["map_generator.gd", "fog_of_war.gd"],
+    "details": {
+      "responsibilities": ["Minimap rendering", "Unit representation", "Resource locations", "View area"],
+      "key_methods": ["update_minimap", "draw_units", "mark_resources", "move_view_area"]
+    }
+  },
+  {
+    "filename": "fog_of_war.gd",
+    "purpose": "Manages visibility and fog of war",
+    "extends": "Node2D",
+    "singleton": true,
+    "dependencies": ["player.gd", "unit.gd", "building.gd"],
+    "details": {
+      "responsibilities": ["Visibility calculations", "Fog of war mask", "Vision updates", "Unit detection"],
+      "key_methods": ["update_fog", "reveal_area", "check_visibility", "detect_enemy_units"]
+    }
+  },
+  {
+    "filename": "game_scene.gd",
+    "purpose": "Main game scene controller",
+    "extends": "Node2D",
+    "singleton": false,
+    "dependencies": ["game_manager.gd", "map_generator.gd", "ui_manager.gd"],
+    "details": {
+      "responsibilities": ["Scene setup", "Input handling", "Camera management", "Game loop"],
+      "key_methods": ["_ready", "handle_input", "manage_camera", "update_game_state"]
+    }
+  },
+  {
+    "filename": "save_load_manager.gd",
+    "purpose": "Manages saving and loading games",
+    "extends": "Node",
+    "singleton": true,
+    "dependencies": ["game_manager.gd", "player_manager.gd", "resource_manager.gd"],
+    "details": {
+      "responsibilities": ["Game state serialization", "Save file management", "Loading saved games"],
+      "key_methods": ["save_game", "load_game", "create_save_data", "parse_save_data"]
+    }
+  },
+  {
+    "filename": "audio_manager.gd",
+    "purpose": "Manages game audio",
+    "extends": "Node",
+    "singleton": true,
+    "dependencies": [],
+    "details": {
+      "responsibilities": ["Sound effects", "Music playback", "Audio settings", "Spatial audio"],
+      "key_methods": ["play_sfx", "start_music", "set_volume", "stop_all_audio"]
+    }
+  },
+  {
+    "filename": "utils.gd",
+    "purpose": "Utility functions used across the game",
+    "extends": "Node",
+    "singleton": true,
+    "dependencies": [],
+    "details": {
+      "responsibilities": ["Math utilities", "Conversion helpers", "String formatting", "Random generation"],
+      "key_methods": ["distance_between", "grid_to_world", "world_to_grid", "random_in_range"]
+    }
+  },
+  {
+    "filename": "globals.gd",
+    "purpose": "Global constants and configurations",
+    "extends": "Node",
+    "singleton": true,
+    "dependencies": [],
+    "details": {
+      "responsibilities": ["Game constants", "Configuration values", "Default settings", "Enum definitions"],
+      "key_methods": ["get_building_data", "get_unit_data", "get_tech_costs", "get_resource_values"]
+    }
+  }
+]
+2025-03-02 20:14:51,612 - supervisor - INFO - Successfully planned 35 files with Claude
+2025-03-02 20:14:51,613 - supervisor - INFO - Initial plan: 35 files to generate
+2025-03-02 20:14:51,614 - supervisor - INFO - Starting code generation with file: game_manager.gd
+2025-03-02 20:14:51,909 - __main__ - INFO - Executing node: supervisor
+2025-03-02 20:14:51,909 - code_writer - INFO - Generating code for game_manager.gd, iteration 1
+2025-03-02 20:14:51,910 - code_writer - INFO - Created initial prompt for game_manager.gd
+2025-03-02 20:14:51,911 - code_writer - INFO - Calling Claude API for game_manager.gd
+2025-03-02 20:14:51,912 - claude_api - INFO - Calling Claude API with prompt of length 4367
+2025-03-02 20:15:22,851 - httpx - INFO - HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2025-03-02 20:15:22,853 - claude_api - INFO - Received response from Claude (8314 chars)
+2025-03-02 20:15:22,853 - code_writer - INFO - Received response from Claude for game_manager.gd (8314 chars)
+2025-03-02 20:15:22,854 - code_writer - INFO - Extracted 8298 chars of GDScript code for game_manager.gd
+2025-03-02 20:15:23,171 - __main__ - INFO - Executing node: code_writer
+2025-03-02 20:15:23,171 - code_review - INFO - Reviewing game_manager.gd (iteration 1)
+2025-03-02 20:15:23,173 - code_review - INFO - Found 1 issues in game_manager.gd: ['Missing type hints for variables: player_coun, player_healt, player_resource, player_base, active_player, current_stat, current_phas, winner_i, game_tim, phase_time_remainin, initial_grace_perio, total_map_resource, remaining_map_resource, resource_manage, tech_manage, map_manage, phase_time, new_health, active_count, resources_empty, highest_health, highest_health_player, player_id']
+2025-03-02 20:15:23,877 - __main__ - INFO - Executing node: code_review
+2025-03-02 20:15:23,878 - code_writer - INFO - Generating code for game_manager.gd, iteration 2
+2025-03-02 20:15:23,879 - code_writer - INFO - Created revision prompt for game_manager.gd (iteration 2)
+2025-03-02 20:15:23,879 - file_processor - INFO - Processing next file: player_manager.gd
+2025-03-02 20:15:23,880 - code_writer - INFO - Calling Claude API for game_manager.gd
+2025-03-02 20:15:23,881 - __main__ - INFO - Executing node: file_processor
+2025-03-02 20:15:23,881 - claude_api - INFO - Calling Claude API with prompt of length 9210
+2025-03-02 20:20:01,315 - run_utils - INFO - Created run folder: runs\20250302_202001_30773c8e
+2025-03-02 20:20:01,316 - __main__ - INFO - Starting Godot prototype generation process with run ID: 20250302_202001_30773c8e
+2025-03-02 20:20:01,316 - __main__ - INFO - Building LangGraph for Godot prototype generation
+2025-03-02 20:20:01,317 - instruction - INFO - InstructionNode initialized: instruction
+2025-03-02 20:20:01,317 - supervisor - INFO - SupervisorNode initialized with max_iterations=3
+2025-03-02 20:20:01,317 - code_writer - INFO - CodeWriterNode initialized: code_writer
+2025-03-02 20:20:01,317 - code_review - INFO - CodeReviewNode initialized: code_review
+2025-03-02 20:20:01,318 - file_processor - INFO - FileProcessorNode initialized: file_processor
+2025-03-02 20:20:01,318 - scene_setup - INFO - SceneSetupNode initialized: scene_setup
+2025-03-02 20:20:01,323 - __main__ - INFO - Graph built successfully with all nodes and connections
+2025-03-02 20:20:01,326 - __main__ - INFO - Received game description: 
+Your game is a real-time strategy and automation ...
+2025-03-02 20:20:01,328 - __main__ - INFO - Running generation graph...
+2025-03-02 20:20:01,392 - instruction - INFO - Processed game premise: 
+Your game is a real-time strategy and automation ...
+2025-03-02 20:20:01,450 - __main__ - INFO - Executing node: instruction
+2025-03-02 20:20:01,452 - supervisor - INFO - Planning necessary files based on game premise: 
+Your game is a real-time strategy and automation ...
+2025-03-02 20:20:01,453 - supervisor - INFO - Creating dynamic file plan for game
+2025-03-02 20:20:01,453 - supervisor - INFO - 
+You are an expert Godot game developer creating a plan for a new game.
+
+Game concept: {game_premise}
+
+I need you to analyze this game concept and list all necessary GDScript files that should be created.
+For each file, provide:
+1. Filename (with .gd extension)
+2. Purpose of the file
+3. Key responsibilities or features
+4. Class that this script extends (Node, Node2D, Control, etc.)
+5. Whether it should be a singleton (autoload)
+6. Likely dependencies on other scripts
+
+Focus on creating a complete architecture that covers:
+- Core game systems (main scene, game state management)
+- Resource management
+- Units and factories
+- UI elements
+- Helper utilities
+
+Format your response as a JSON array with objects having these fields:
+[
+  {{
+    "filename": "example.gd", 
+    "purpose": "what this file does",
+    "extends": "Node2D",
+    "singleton": true/false,
+    "dependencies": ["other_file.gd"],
+    "details": {{
+      "responsibilities": ["feature1", "feature2"],
+      "key_methods": ["method1", "method2"]
+    }}
+  }}
+]
+
+Provide only the JSON array, no explanations or markdown.
+
+2025-03-02 20:20:01,459 - claude_api - INFO - Calling Claude API with prompt of length 4368
+2025-03-02 20:20:52,536 - httpx - INFO - HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2025-03-02 20:20:52,541 - claude_api - INFO - Received response from Claude (13675 chars)
+2025-03-02 20:20:52,541 - supervisor - INFO - Raw Claude response:
+[
+  {
+    "filename": "game_manager.gd",
+    "purpose": "Manages the overall game state, turns, and victory conditions",
+    "extends": "Node",
+    "singleton": true,
+    "dependencies": ["resource_manager.gd", "player_manager.gd", "map_generator.gd", "tech_manager.gd", "ui_manager.gd"],
+    "details": {
+      "responsibilities": ["Game initialization", "Turn management", "Victory/defeat detection", "Game timer", "Pause functionality"],
+      "key_methods": ["start_game()", "end_game()", "check_victory_condition()", "next_turn()", "pause_game()"]
+    }
+  },
+  {
+    "filename": "player_manager.gd",
+    "purpose": "Manages player data, factions, and player interactions",
+    "extends": "Node",
+    "singleton": true,
+    "dependencies": ["player.gd", "resource_manager.gd"],
+    "details": {
+      "responsibilities": ["Player initialization", "Player switching", "Faction assignment", "Player stats tracking"],
+      "key_methods": ["initialize_players()", "get_current_player()", "switch_active_player()", "get_player_by_id()"]
+    }
+  },
+  {
+    "filename": "player.gd",
+    "purpose": "Represents a player entity with resources, buildings, and units",
+    "extends": "Node",
+    "singleton": false,
+    "dependencies": ["resource_manager.gd", "tech_manager.gd", "building.gd", "unit.gd"],
+    "details": {
+      "responsibilities": ["Player resources", "Building ownership", "Unit ownership", "Tech progression", "Base health"],
+      "key_methods": ["add_resource()", "remove_resource()", "add_building()", "add_unit()", "take_damage()"]
+    }
+  },
+  {
+    "filename": "resource_manager.gd",
+    "purpose": "Manages all game resources and their interactions",
+    "extends": "Node",
+    "singleton": true,
+    "dependencies": [],
+    "details": {
+      "responsibilities": ["Resource definition", "Resource spawning", "Resource depletion", "Resource conversion"],
+      "key_methods": ["spawn_resource()", "deplete_resource()", "get_resource_by_type()", "convert_resources()"]
+    }
+  },
+  {
+    "filename": "resource.gd",
+    "purpose": "Base class for all resource types in the game",
+    "extends": "Node2D",
+    "singleton": false,
+    "dependencies": ["resource_manager.gd"],
+    "details": {
+      "responsibilities": ["Resource visualization", "Resource collection", "Resource depletion"],
+      "key_methods": ["collect()", "deplete()", "respawn()"]
+    }
+  },
+  {
+    "filename": "tech_manager.gd",
+    "purpose": "Manages technology research and unlocks",
+    "extends": "Node",
+    "singleton": true,
+    "dependencies": ["player.gd", "building.gd", "unit.gd"],
+    "details": {
+      "responsibilities": ["Tech tree definition", "Research progress tracking", "Tech unlocking", "Tech requirements"],
+      "key_methods": ["research_tech()", "unlock_tech()", "get_available_techs()", "is_tech_researched()"]
+    }
+  },
+  {
+    "filename": "map_generator.gd",
+    "purpose": "Creates and manages the game map and terrain",
+    "extends": "Node2D",
+    "singleton": false,
+    "dependencies": ["resource_manager.gd", "terrain.gd"],
+    "details": {
+      "responsibilities": ["Map generation", "Resource placement", "Starting position selection", "Terrain creation"],
+      "key_methods": ["generate_map()", "place_resources()", "select_start_locations()", "get_terrain_at()"]
+    }
+  },
+  {
+    "filename": "terrain.gd",
+    "purpose": "Handles terrain types and their properties",
+    "extends": "TileMap",
+    "singleton": false,
+    "dependencies": [],
+    "details": {
+      "responsibilities": ["Terrain type definition", "Terrain pathfinding weights", "Terrain visualization"],
+      "key_methods": ["set_terrain_type()", "get_terrain_type()", "get_movement_cost()"]
+    }
+  },
+  {
+    "filename": "building.gd",
+    "purpose": "Base class for all buildings in the game",
+    "extends": "Node2D",
+    "singleton": false,
+    "dependencies": ["player.gd", "resource_manager.gd"],
+    "details": {
+      "responsibilities": ["Building placement", "Building functionality", "Building health", "Building upgrading"],
+      "key_methods": ["place()", "destroy()", "upgrade()", "process_production()"]
+    }
+  },
+  {
+    "filename": "harvester.gd",
+    "purpose": "Building that automatically harvests resources",
+    "extends": "building.gd",
+    "singleton": false,
+    "dependencies": ["resource.gd"],
+    "details": {
+      "responsibilities": ["Resource targeting", "Automated harvesting", "Resource storage", "Efficiency upgrades"],
+      "key_methods": ["set_target_resource()", "harvest()", "collect()", "upgrade_efficiency()"]
+    }
+  },
+  {
+    "filename": "factory.gd",
+    "purpose": "Building that produces units or transforms resources",
+    "extends": "building.gd",
+    "singleton": false,
+    "dependencies": ["unit.gd", "resource_manager.gd"],
+    "details": {
+      "responsibilities": ["Production queue", "Resource consumption", "Output creation", "Production efficiency"],
+      "key_methods": ["add_to_queue()", "produce()", "consume_resources()", "deliver_output()"]
+    }
+  },
+  {
+    "filename": "defense.gd",
+    "purpose": "Building that provides defense against enemy units",
+    "extends": "building.gd",
+    "singleton": false,
+    "dependencies": ["unit.gd"],
+    "details": {
+      "responsibilities": ["Unit targeting", "Damage dealing", "Area defense", "Upgrade paths"],
+      "key_methods": ["target_enemy()", "attack()", "set_defense_area()", "upgrade_range()"]
+    }
+  },
+  {
+    "filename": "unit.gd",
+    "purpose": "Base class for all combat units",
+    "extends": "Node2D",
+    "singleton": false,
+    "dependencies": ["player.gd"],
+    "details": {
+      "responsibilities": ["Unit movement", "Combat mechanics", "Health management", "Targeting logic"],
+      "key_methods": ["move()", "attack()", "take_damage()", "set_target()"]
+    }
+  },
+  {
+    "filename": "combat_unit.gd",
+    "purpose": "Units that engage in combat with enemy buildings and units",
+    "extends": "unit.gd",
+    "singleton": false,
+    "dependencies": ["defense.gd", "building.gd"],
+    "details": {
+      "responsibilities": ["Attack patterns", "Target prioritization", "Special abilities", "Combat stats"],
+      "key_methods": ["engage_target()", "prioritize_targets()", "use_ability()", "retreat()"]
+    }
+  },
+  {
+    "filename": "avatar.gd",
+    "purpose": "Player's controllable character that can collect resources and build",
+    "extends": "Node2D",
+    "singleton": false,
+    "dependencies": ["player.gd", "resource.gd", "building.gd"],
+    "details": {
+      "responsibilities": ["Player movement", "Resource collection", "Building placement", "Combat interactions"],
+      "key_methods": ["move_to()", "collect_resource()", "place_building()", "interact()"]
+    }
+  },
+  {
+    "filename": "ui_manager.gd",
+    "purpose": "Manages all UI elements and interactions",
+    "extends": "CanvasLayer",
+    "singleton": true,
+    "dependencies": ["game_manager.gd", "player_manager.gd", "resource_manager.gd", "tech_manager.gd"],
+    "details": {
+      "responsibilities": ["UI initialization", "Resource display", "Building hotbar", "Tech tree display", "Game messages"],
+      "key_methods": ["update_resource_display()", "update_building_hotbar()", "show_tech_tree()", "display_message()"]
+    }
+  },
+  {
+    "filename": "building_hotbar.gd",
+    "purpose": "Manages the player's building selection interface",
+    "extends": "Control",
+    "singleton": false,
+    "dependencies": ["building.gd", "player.gd", "ui_manager.gd"],
+    "details": {
+      "responsibilities": ["Building selection", "Building placement preview", "Building availability", "Tooltip display"],
+      "key_methods": ["select_building()", "show_preview()", "update_availability()", "show_tooltip()"]
+    }
+  },
+  {
+    "filename": "tech_tree_ui.gd",
+    "purpose": "Visual representation of the technology tree",
+    "extends": "Control",
+    "singleton": false,
+    "dependencies": ["tech_manager.gd", "player.gd", "ui_manager.gd"],
+    "details": {
+      "responsibilities": ["Tech tree visualization", "Research selection", "Progress tracking", "Requirement display"],
+      "key_methods": ["display_tech_tree()", "select_research()", "update_progress()", "show_requirements()"]
+    }
+  },
+  {
+    "filename": "resource_display.gd",
+    "purpose": "Shows current resource amounts and production rates",
+    "extends": "Control",
+    "singleton": false,
+    "dependencies": ["resource_manager.gd", "player.gd", "ui_manager.gd"],
+    "details": {
+      "responsibilities": ["Resource count display", "Production rate display", "Resource icons", "Capacity warnings"],
+      "key_methods": ["update_resource_counts()", "update_production_rates()", "show_warning()"]
+    }
+  },
+  {
+    "filename": "pathfinding.gd",
+    "purpose": "Handles unit pathfinding across the game map",
+    "extends": "Node",
+    "singleton": true,
+    "dependencies": ["terrain.gd", "map_generator.gd"],
+    "details": {
+      "responsibilities": ["A* pathfinding", "Path optimization", "Obstacle avoidance", "Group movement"],
+      "key_methods": ["find_path()", "optimize_path()", "is_path_blocked()", "get_formation_paths()"]
+    }
+  },
+  {
+    "filename": "spawn_track.gd",
+    "purpose": "Manages the predetermined paths for automatically spawned units",
+    "extends": "Node2D",
+    "singleton": false,
+    "dependencies": ["unit.gd", "pathfinding.gd"],
+    "details": {
+      "responsibilities": ["Track definition", "Unit progress tracking", "Speed calculation", "Path visualization"],
+      "key_methods": ["add_unit_to_track()", "advance_units()", "get_next_position()", "visualize_track()"]
+    }
+  },
+  {
+    "filename": "faction_manager.gd",
+    "purpose": "Manages different playable factions and their unique abilities",
+    "extends": "Node",
+    "singleton": true,
+    "dependencies": ["player.gd", "building.gd", "unit.gd"],
+    "details": {
+      "responsibilities": ["Faction definition", "Faction bonuses", "Unique units/buildings", "Balance adjustments"],
+      "key_methods": ["get_faction_data()", "apply_faction_bonuses()", "get_faction_units()", "get_faction_buildings()"]
+    }
+  },
+  {
+    "filename": "relic_system.gd",
+    "purpose": "Manages special relics that provide bonuses when discovered",
+    "extends": "Node",
+    "singleton": true,
+    "dependencies": ["player.gd", "map_generator.gd"],
+    "details": {
+      "responsibilities": ["Relic spawning", "Bonus application", "Relic discovery", "Special effects"],
+      "key_methods": ["spawn_relics()", "apply_relic_bonus()", "discover_relic()", "get_active_relics()"]
+    }
+  },
+  {
+    "filename": "audio_manager.gd",
+    "purpose": "Manages all game audio including music, effects, and ambient sounds",
+    "extends": "Node",
+    "singleton": true,
+    "dependencies": [],
+    "details": {
+      "responsibilities": ["Sound effect playback", "Music management", "Volume control", "Audio loading"],
+      "key_methods": ["play_sound()", "play_music()", "set_volume()", "preload_sounds()"]
+    }
+  },
+  {
+    "filename": "main_menu.gd",
+    "purpose": "Handles the main menu interface and game setup",
+    "extends": "Control",
+    "singleton": false,
+    "dependencies": ["game_manager.gd", "faction_manager.gd"],
+    "details": {
+      "responsibilities": ["Menu navigation", "Game setup options", "Faction selection", "Map selection"],
+      "key_methods": ["start_new_game()", "show_faction_select()", "select_map()", "load_saved_game()"]
+    }
+  },
+  {
+    "filename": "save_system.gd",
+    "purpose": "Handles saving and loading game states",
+    "extends": "Node",
+    "singleton": true,
+    "dependencies": ["game_manager.gd", "player_manager.gd", "map_generator.gd"],
+    "details": {
+      "responsibilities": ["Game state serialization", "Save file management", "Load game functionality", "Autosave"],
+      "key_methods": ["save_game()", "load_game()", "list_saved_games()", "autosave()"]
+    }
+  },
+  {
+    "filename": "fog_of_war.gd",
+    "purpose": "Manages visibility and fog of war mechanics",
+    "extends": "Node2D",
+    "singleton": false,
+    "dependencies": ["player.gd", "unit.gd", "building.gd"],
+    "details": {
+      "responsibilities": ["Visibility calculation", "Fog rendering", "Revealed area tracking", "Scouting mechanics"],
+      "key_methods": ["update_visibility()", "reveal_area()", "is_visible()", "calculate_visible_tiles()"]
+    }
+  },
+  {
+    "filename": "effects_manager.gd",
+    "purpose": "Handles visual effects like particles, animations, and damage numbers",
+    "extends": "Node",
+    "singleton": true,
+    "dependencies": [],
+    "details": {
+      "responsibilities": ["Particle effects", "Animation coordination", "Damage number display", "Visual feedback"],
+      "key_methods": ["spawn_effect()", "show_damage_number()", "play_building_animation()", "create_explosion()"]
+    }
+  },
+  {
+    "filename": "tutorial_manager.gd",
+    "purpose": "Manages the in-game tutorial and help system",
+    "extends": "Node",
+    "singleton": true,
+    "dependencies": ["ui_manager.gd", "game_manager.gd"],
+    "details": {
+      "responsibilities": ["Tutorial steps", "Contextual help", "Tool tips", "Learning progression"],
+      "key_methods": ["start_tutorial()", "show_help_for()", "display_tooltip()", "mark_step_complete()"]
+    }
+  },
+  {
+    "filename": "utils.gd",
+    "purpose": "Contains utility functions used throughout the game",
+    "extends": "Node",
+    "singleton": true,
+    "dependencies": [],
+    "details": {
+      "responsibilities": ["Math helpers", "String formatting", "Time conversions", "Random number generation"],
+      "key_methods": ["distance_between()", "format_time()", "random_int()", "lerp_vector2()"]
+    }
+  }
+]
+2025-03-02 20:20:52,563 - supervisor - INFO - Extracted JSON:
+[
+  {
+    "filename": "game_manager.gd",
+    "purpose": "Manages the overall game state, turns, and victory conditions",
+    "extends": "Node",
+    "singleton": true,
+    "dependencies": ["resource_manager.gd", "player_manager.gd", "map_generator.gd", "tech_manager.gd", "ui_manager.gd"],
+    "details": {
+      "responsibilities": ["Game initialization", "Turn management", "Victory/defeat detection", "Game timer", "Pause functionality"],
+      "key_methods": ["start_game()", "end_game()", "check_victory_condition()", "next_turn()", "pause_game()"]
+    }
+  },
+  {
+    "filename": "player_manager.gd",
+    "purpose": "Manages player data, factions, and player interactions",
+    "extends": "Node",
+    "singleton": true,
+    "dependencies": ["player.gd", "resource_manager.gd"],
+    "details": {
+      "responsibilities": ["Player initialization", "Player switching", "Faction assignment", "Player stats tracking"],
+      "key_methods": ["initialize_players()", "get_current_player()", "switch_active_player()", "get_player_by_id()"]
+    }
+  },
+  {
+    "filename": "player.gd",
+    "purpose": "Represents a player entity with resources, buildings, and units",
+    "extends": "Node",
+    "singleton": false,
+    "dependencies": ["resource_manager.gd", "tech_manager.gd", "building.gd", "unit.gd"],
+    "details": {
+      "responsibilities": ["Player resources", "Building ownership", "Unit ownership", "Tech progression", "Base health"],
+      "key_methods": ["add_resource()", "remove_resource()", "add_building()", "add_unit()", "take_damage()"]
+    }
+  },
+  {
+    "filename": "resource_manager.gd",
+    "purpose": "Manages all game resources and their interactions",
+    "extends": "Node",
+    "singleton": true,
+    "dependencies": [],
+    "details": {
+      "responsibilities": ["Resource definition", "Resource spawning", "Resource depletion", "Resource conversion"],
+      "key_methods": ["spawn_resource()", "deplete_resource()", "get_resource_by_type()", "convert_resources()"]
+    }
+  },
+  {
+    "filename": "resource.gd",
+    "purpose": "Base class for all resource types in the game",
+    "extends": "Node2D",
+    "singleton": false,
+    "dependencies": ["resource_manager.gd"],
+    "details": {
+      "responsibilities": ["Resource visualization", "Resource collection", "Resource depletion"],
+      "key_methods": ["collect()", "deplete()", "respawn()"]
+    }
+  },
+  {
+    "filename": "tech_manager.gd",
+    "purpose": "Manages technology research and unlocks",
+    "extends": "Node",
+    "singleton": true,
+    "dependencies": ["player.gd", "building.gd", "unit.gd"],
+    "details": {
+      "responsibilities": ["Tech tree definition", "Research progress tracking", "Tech unlocking", "Tech requirements"],
+      "key_methods": ["research_tech()", "unlock_tech()", "get_available_techs()", "is_tech_researched()"]
+    }
+  },
+  {
+    "filename": "map_generator.gd",
+    "purpose": "Creates and manages the game map and terrain",
+    "extends": "Node2D",
+    "singleton": false,
+    "dependencies": ["resource_manager.gd", "terrain.gd"],
+    "details": {
+      "responsibilities": ["Map generation", "Resource placement", "Starting position selection", "Terrain creation"],
+      "key_methods": ["generate_map()", "place_resources()", "select_start_locations()", "get_terrain_at()"]
+    }
+  },
+  {
+    "filename": "terrain.gd",
+    "purpose": "Handles terrain types and their properties",
+    "extends": "TileMap",
+    "singleton": false,
+    "dependencies": [],
+    "details": {
+      "responsibilities": ["Terrain type definition", "Terrain pathfinding weights", "Terrain visualization"],
+      "key_methods": ["set_terrain_type()", "get_terrain_type()", "get_movement_cost()"]
+    }
+  },
+  {
+    "filename": "building.gd",
+    "purpose": "Base class for all buildings in the game",
+    "extends": "Node2D",
+    "singleton": false,
+    "dependencies": ["player.gd", "resource_manager.gd"],
+    "details": {
+      "responsibilities": ["Building placement", "Building functionality", "Building health", "Building upgrading"],
+      "key_methods": ["place()", "destroy()", "upgrade()", "process_production()"]
+    }
+  },
+  {
+    "filename": "harvester.gd",
+    "purpose": "Building that automatically harvests resources",
+    "extends": "building.gd",
+    "singleton": false,
+    "dependencies": ["resource.gd"],
+    "details": {
+      "responsibilities": ["Resource targeting", "Automated harvesting", "Resource storage", "Efficiency upgrades"],
+      "key_methods": ["set_target_resource()", "harvest()", "collect()", "upgrade_efficiency()"]
+    }
+  },
+  {
+    "filename": "factory.gd",
+    "purpose": "Building that produces units or transforms resources",
+    "extends": "building.gd",
+    "singleton": false,
+    "dependencies": ["unit.gd", "resource_manager.gd"],
+    "details": {
+      "responsibilities": ["Production queue", "Resource consumption", "Output creation", "Production efficiency"],
+      "key_methods": ["add_to_queue()", "produce()", "consume_resources()", "deliver_output()"]
+    }
+  },
+  {
+    "filename": "defense.gd",
+    "purpose": "Building that provides defense against enemy units",
+    "extends": "building.gd",
+    "singleton": false,
+    "dependencies": ["unit.gd"],
+    "details": {
+      "responsibilities": ["Unit targeting", "Damage dealing", "Area defense", "Upgrade paths"],
+      "key_methods": ["target_enemy()", "attack()", "set_defense_area()", "upgrade_range()"]
+    }
+  },
+  {
+    "filename": "unit.gd",
+    "purpose": "Base class for all combat units",
+    "extends": "Node2D",
+    "singleton": false,
+    "dependencies": ["player.gd"],
+    "details": {
+      "responsibilities": ["Unit movement", "Combat mechanics", "Health management", "Targeting logic"],
+      "key_methods": ["move()", "attack()", "take_damage()", "set_target()"]
+    }
+  },
+  {
+    "filename": "combat_unit.gd",
+    "purpose": "Units that engage in combat with enemy buildings and units",
+    "extends": "unit.gd",
+    "singleton": false,
+    "dependencies": ["defense.gd", "building.gd"],
+    "details": {
+      "responsibilities": ["Attack patterns", "Target prioritization", "Special abilities", "Combat stats"],
+      "key_methods": ["engage_target()", "prioritize_targets()", "use_ability()", "retreat()"]
+    }
+  },
+  {
+    "filename": "avatar.gd",
+    "purpose": "Player's controllable character that can collect resources and build",
+    "extends": "Node2D",
+    "singleton": false,
+    "dependencies": ["player.gd", "resource.gd", "building.gd"],
+    "details": {
+      "responsibilities": ["Player movement", "Resource collection", "Building placement", "Combat interactions"],
+      "key_methods": ["move_to()", "collect_resource()", "place_building()", "interact()"]
+    }
+  },
+  {
+    "filename": "ui_manager.gd",
+    "purpose": "Manages all UI elements and interactions",
+    "extends": "CanvasLayer",
+    "singleton": true,
+    "dependencies": ["game_manager.gd", "player_manager.gd", "resource_manager.gd", "tech_manager.gd"],
+    "details": {
+      "responsibilities": ["UI initialization", "Resource display", "Building hotbar", "Tech tree display", "Game messages"],
+      "key_methods": ["update_resource_display()", "update_building_hotbar()", "show_tech_tree()", "display_message()"]
+    }
+  },
+  {
+    "filename": "building_hotbar.gd",
+    "purpose": "Manages the player's building selection interface",
+    "extends": "Control",
+    "singleton": false,
+    "dependencies": ["building.gd", "player.gd", "ui_manager.gd"],
+    "details": {
+      "responsibilities": ["Building selection", "Building placement preview", "Building availability", "Tooltip display"],
+      "key_methods": ["select_building()", "show_preview()", "update_availability()", "show_tooltip()"]
+    }
+  },
+  {
+    "filename": "tech_tree_ui.gd",
+    "purpose": "Visual representation of the technology tree",
+    "extends": "Control",
+    "singleton": false,
+    "dependencies": ["tech_manager.gd", "player.gd", "ui_manager.gd"],
+    "details": {
+      "responsibilities": ["Tech tree visualization", "Research selection", "Progress tracking", "Requirement display"],
+      "key_methods": ["display_tech_tree()", "select_research()", "update_progress()", "show_requirements()"]
+    }
+  },
+  {
+    "filename": "resource_display.gd",
+    "purpose": "Shows current resource amounts and production rates",
+    "extends": "Control",
+    "singleton": false,
+    "dependencies": ["resource_manager.gd", "player.gd", "ui_manager.gd"],
+    "details": {
+      "responsibilities": ["Resource count display", "Production rate display", "Resource icons", "Capacity warnings"],
+      "key_methods": ["update_resource_counts()", "update_production_rates()", "show_warning()"]
+    }
+  },
+  {
+    "filename": "pathfinding.gd",
+    "purpose": "Handles unit pathfinding across the game map",
+    "extends": "Node",
+    "singleton": true,
+    "dependencies": ["terrain.gd", "map_generator.gd"],
+    "details": {
+      "responsibilities": ["A* pathfinding", "Path optimization", "Obstacle avoidance", "Group movement"],
+      "key_methods": ["find_path()", "optimize_path()", "is_path_blocked()", "get_formation_paths()"]
+    }
+  },
+  {
+    "filename": "spawn_track.gd",
+    "purpose": "Manages the predetermined paths for automatically spawned units",
+    "extends": "Node2D",
+    "singleton": false,
+    "dependencies": ["unit.gd", "pathfinding.gd"],
+    "details": {
+      "responsibilities": ["Track definition", "Unit progress tracking", "Speed calculation", "Path visualization"],
+      "key_methods": ["add_unit_to_track()", "advance_units()", "get_next_position()", "visualize_track()"]
+    }
+  },
+  {
+    "filename": "faction_manager.gd",
+    "purpose": "Manages different playable factions and their unique abilities",
+    "extends": "Node",
+    "singleton": true,
+    "dependencies": ["player.gd", "building.gd", "unit.gd"],
+    "details": {
+      "responsibilities": ["Faction definition", "Faction bonuses", "Unique units/buildings", "Balance adjustments"],
+      "key_methods": ["get_faction_data()", "apply_faction_bonuses()", "get_faction_units()", "get_faction_buildings()"]
+    }
+  },
+  {
+    "filename": "relic_system.gd",
+    "purpose": "Manages special relics that provide bonuses when discovered",
+    "extends": "Node",
+    "singleton": true,
+    "dependencies": ["player.gd", "map_generator.gd"],
+    "details": {
+      "responsibilities": ["Relic spawning", "Bonus application", "Relic discovery", "Special effects"],
+      "key_methods": ["spawn_relics()", "apply_relic_bonus()", "discover_relic()", "get_active_relics()"]
+    }
+  },
+  {
+    "filename": "audio_manager.gd",
+    "purpose": "Manages all game audio including music, effects, and ambient sounds",
+    "extends": "Node",
+    "singleton": true,
+    "dependencies": [],
+    "details": {
+      "responsibilities": ["Sound effect playback", "Music management", "Volume control", "Audio loading"],
+      "key_methods": ["play_sound()", "play_music()", "set_volume()", "preload_sounds()"]
+    }
+  },
+  {
+    "filename": "main_menu.gd",
+    "purpose": "Handles the main menu interface and game setup",
+    "extends": "Control",
+    "singleton": false,
+    "dependencies": ["game_manager.gd", "faction_manager.gd"],
+    "details": {
+      "responsibilities": ["Menu navigation", "Game setup options", "Faction selection", "Map selection"],
+      "key_methods": ["start_new_game()", "show_faction_select()", "select_map()", "load_saved_game()"]
+    }
+  },
+  {
+    "filename": "save_system.gd",
+    "purpose": "Handles saving and loading game states",
+    "extends": "Node",
+    "singleton": true,
+    "dependencies": ["game_manager.gd", "player_manager.gd", "map_generator.gd"],
+    "details": {
+      "responsibilities": ["Game state serialization", "Save file management", "Load game functionality", "Autosave"],
+      "key_methods": ["save_game()", "load_game()", "list_saved_games()", "autosave()"]
+    }
+  },
+  {
+    "filename": "fog_of_war.gd",
+    "purpose": "Manages visibility and fog of war mechanics",
+    "extends": "Node2D",
+    "singleton": false,
+    "dependencies": ["player.gd", "unit.gd", "building.gd"],
+    "details": {
+      "responsibilities": ["Visibility calculation", "Fog rendering", "Revealed area tracking", "Scouting mechanics"],
+      "key_methods": ["update_visibility()", "reveal_area()", "is_visible()", "calculate_visible_tiles()"]
+    }
+  },
+  {
+    "filename": "effects_manager.gd",
+    "purpose": "Handles visual effects like particles, animations, and damage numbers",
+    "extends": "Node",
+    "singleton": true,
+    "dependencies": [],
+    "details": {
+      "responsibilities": ["Particle effects", "Animation coordination", "Damage number display", "Visual feedback"],
+      "key_methods": ["spawn_effect()", "show_damage_number()", "play_building_animation()", "create_explosion()"]
+    }
+  },
+  {
+    "filename": "tutorial_manager.gd",
+    "purpose": "Manages the in-game tutorial and help system",
+    "extends": "Node",
+    "singleton": true,
+    "dependencies": ["ui_manager.gd", "game_manager.gd"],
+    "details": {
+      "responsibilities": ["Tutorial steps", "Contextual help", "Tool tips", "Learning progression"],
+      "key_methods": ["start_tutorial()", "show_help_for()", "display_tooltip()", "mark_step_complete()"]
+    }
+  },
+  {
+    "filename": "utils.gd",
+    "purpose": "Contains utility functions used throughout the game",
+    "extends": "Node",
+    "singleton": true,
+    "dependencies": [],
+    "details": {
+      "responsibilities": ["Math helpers", "String formatting", "Time conversions", "Random number generation"],
+      "key_methods": ["distance_between()", "format_time()", "random_int()", "lerp_vector2()"]
+    }
+  }
+]
+2025-03-02 20:20:52,587 - supervisor - INFO - Successfully planned 30 files with Claude
+2025-03-02 20:20:52,588 - supervisor - INFO - Initial plan: 30 files to generate
+2025-03-02 20:20:52,588 - supervisor - INFO - Starting code generation with file: game_manager.gd
+2025-03-02 20:20:52,632 - __main__ - INFO - Executing node: supervisor
+2025-03-02 20:20:52,637 - code_writer - INFO - Generating code for game_manager.gd, iteration 1
+2025-03-02 20:20:52,637 - code_writer - INFO - Created initial prompt for game_manager.gd
+2025-03-02 20:20:52,637 - code_writer - INFO - Calling Claude API for game_manager.gd
+2025-03-02 20:20:52,638 - claude_api - INFO - Calling Claude API with prompt of length 4388
+2025-03-02 20:21:23,140 - httpx - INFO - HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2025-03-02 20:21:23,142 - claude_api - INFO - Received response from Claude (7056 chars)
+2025-03-02 20:21:23,142 - code_writer - INFO - Received response from Claude for game_manager.gd (7056 chars)
+2025-03-02 20:21:23,143 - code_writer - INFO - Extracted 7040 chars of GDScript code for game_manager.gd
+2025-03-02 20:21:23,203 - __main__ - INFO - Executing node: code_writer
+2025-03-02 20:21:23,207 - code_review - INFO - Reviewing game_manager.gd (iteration 1)
+2025-03-02 20:21:23,208 - code_review - INFO - Found 1 issues in game_manager.gd: ['Missing type hints for variables: game_tim, build_phase_tim, is_build_phas, current_tur, current_player_i, player_coun, is_game_activ, is_pause, player, resources_availabl, rando, game_time, turn_time, defeated_players, active_players, max_hp, winner_id, tie, player_hp, all_depleted']
+2025-03-02 20:21:23,289 - __main__ - INFO - Executing node: code_review
+2025-03-02 20:21:23,293 - code_writer - INFO - Generating code for game_manager.gd, iteration 2
+2025-03-02 20:21:23,294 - file_processor - INFO - Processing next file: player_manager.gd
+2025-03-02 20:21:23,294 - code_writer - INFO - Created revision prompt for game_manager.gd (iteration 2)
+2025-03-02 20:21:23,295 - __main__ - INFO - Executing node: file_processor
+2025-03-02 20:21:23,295 - code_writer - INFO - Calling Claude API for game_manager.gd
+2025-03-02 20:21:23,295 - claude_api - INFO - Calling Claude API with prompt of length 7884
+2025-03-02 20:21:50,810 - httpx - INFO - HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2025-03-02 20:21:50,812 - claude_api - INFO - Received response from Claude (7097 chars)
+2025-03-02 20:21:50,813 - code_writer - INFO - Received response from Claude for game_manager.gd (7097 chars)
+2025-03-02 20:21:50,813 - code_writer - INFO - Extracted 7081 chars of GDScript code for game_manager.gd
+2025-03-02 20:21:50,814 - __main__ - INFO - Executing node: code_writer
+2025-03-02 20:21:50,849 - __main__ - ERROR - Error during execution: At key 'current_file': Can receive only one value per step. Use an Annotated key to handle multiple values.
+For troubleshooting, visit: https://python.langchain.com/docs/troubleshooting/errors/INVALID_CONCURRENT_GRAPH_UPDATE
+2025-03-02 20:21:50,858 - run_utils - INFO - Saved final state with status: error
